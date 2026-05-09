@@ -2,76 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
-  <title>Courses | Batuhan Koyuncu</title>
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Free Courses and Lecture Notes | Batuhan Koyuncu</title>
+  <meta name="description" content="Free lecture notes, PDFs, problem sheets, simulations, and worked examples in physics, mathematics, electrical engineering, and scientific computing.">
+  <meta name="author" content="Batuhan Koyuncu">
+  <meta name="robots" content="index, follow">
+
+  <meta property="og:title" content="Free Courses and Lecture Notes | Batuhan Koyuncu">
+  <meta property="og:description" content="Browse free academic material in physics, mathematics, electrical engineering, and scientific computing.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://batuhan-koyuncu.github.io/courses.html">
+
+  <link rel="canonical" href="https://batuhan-koyuncu.github.io/courses.html">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
 
-  <header>
-    <h1>Courses</h1>
+<body data-page="courses">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="courses.html">Courses</a>
-      <a href="private-courses.html">Private Courses</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html" aria-label="Batuhan Koyuncu homepage">
+        <span class="brand-name">Batuhan Koyuncu</span>
+        <span class="brand-subtitle">Physics • Mathematics • Scientific Computing</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+
+      <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="courses.html" data-nav="courses">Courses</a>
+        <a href="private-courses.html" data-nav="private-courses">Private Tutoring</a>
+        <a href="about.html" data-nav="about">About</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <p>
-      This page collects free lecture content, problem sheets, PDFs,
-      Python-generated plots, and visual explanations.
-    </p>
-
-    <div class="course-box">
-      <h2>Physics</h2>
-      <p>
-        Lecture notes on mathematical physics, electrodynamics, quantum mechanics,
-        statistical physics, stochastic processes, and theoretical methods.
+  <main id="main-content">
+    <section class="page-hero">
+      <p class="eyebrow">Free course material</p>
+      <h1 class="page-title">Lecture notes, problem sheets, simulations, and worked examples.</h1>
+      <p class="lead">
+        This page organizes public material by subject. Each card is designed so future PDFs,
+        notes, Python plots, hand-sketched figures, and exercises can be added without changing
+        the whole website structure.
       </p>
+    </section>
 
-      <ul>
-        <li>
-          <a href="lectures/brownian-market-model.html">Brownian Market Model</a>
-          — stochastic dynamics, Brownian motion, geometric Brownian motion,
-          log-returns, volatility diagnostics, and simulation.
-        </li>
-      </ul>
-    </div>
+    <section class="section" aria-label="Course subject areas">
+      <div class="grid grid-2">
+        <article class="card course-card">
+          <p class="eyebrow">Physics</p>
+          <h2>Physics and Mathematical Physics</h2>
+          <p>
+            Mathematical physics, electrodynamics, quantum mechanics, statistical physics,
+            stochastic processes, and theoretical methods.
+          </p>
+          <ul class="resource-list">
+            <li>
+              <a href="lectures/brownian-market-model.html">
+                Brownian Market Model
+                <span>Stochastic dynamics, geometric Brownian motion, log-returns, volatility diagnostics, and simulation.</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="tag-list" aria-label="Physics content types">
+            <li>Lecture notes</li>
+            <li>Worked derivations</li>
+            <li>Python simulations</li>
+          </ul>
+        </article>
 
-    <div class="course-box">
-      <h2>Mathematics for Physics and Engineering</h2>
-      <p>
-        Vector calculus, differential equations, Fourier methods, complex numbers,
-        and linear algebra.
-      </p>
-    </div>
+        <article class="card course-card">
+          <p class="eyebrow">Mathematics</p>
+          <h2>Mathematics for Physics and Engineering</h2>
+          <p>
+            Vector calculus, curvilinear coordinates, differential equations, Fourier methods,
+            complex numbers, and linear algebra.
+          </p>
+          <ul class="resource-list">
+            <li>
+              <a href="contact.html">
+                Request a topic
+                <span>Future notes and problem sheets can be added here as the library grows.</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="tag-list" aria-label="Mathematics content types">
+            <li>Problem sheets</li>
+            <li>Formula guides</li>
+            <li>Visual explanations</li>
+          </ul>
+        </article>
 
-    <div class="course-box">
-      <h2>Electrical Engineering</h2>
-      <p>
-        Circuits, signals, transfer functions, frequency response, control theory,
-        and Elektrotechnik-style problem solving.
-      </p>
-    </div>
+        <article class="card course-card">
+          <p class="eyebrow">Engineering</p>
+          <h2>Electrical Engineering</h2>
+          <p>
+            Circuits, signals, transfer functions, frequency response, control theory,
+            systems theory, and Elektrotechnik-style problem solving.
+          </p>
+          <ul class="resource-list">
+            <li>
+              <a href="contact.html">
+                Ask about engineering tutoring
+                <span>Suitable for lecture support, homework help, and exam preparation.</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="tag-list" aria-label="Electrical engineering content types">
+            <li>Worked examples</li>
+            <li>Exam preparation</li>
+            <li>Control theory</li>
+          </ul>
+        </article>
 
-    <div class="course-box">
-      <h2>Programming and Scientific Computing</h2>
-      <p>
-        Python, JavaScript, GitHub, LaTeX workflows, simulations, and scientific plots.
-      </p>
-    </div>
+        <article class="card course-card">
+          <p class="eyebrow">Computing</p>
+          <h2>Programming and Scientific Computing</h2>
+          <p>
+            Python, JavaScript, numerical experiments, scientific plotting, GitHub, LaTeX,
+            and reproducible academic workflows.
+          </p>
+          <ul class="resource-list">
+            <li>
+              <a href="contact.html">
+                Discuss a coding project
+                <span>Support for simulations, reports, GitHub Pages, and LaTeX-based materials.</span>
+              </a>
+            </li>
+          </ul>
+          <ul class="tag-list" aria-label="Programming content types">
+            <li>Python plots</li>
+            <li>LaTeX</li>
+            <li>GitHub workflows</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="add-material-title">
+      <div class="panel">
+        <p class="eyebrow">Expandable structure</p>
+        <h2 id="add-material-title">How new material will be organized</h2>
+        <p>
+          PDFs should go into <code>assets/pdf/</code>, figures into <code>assets/img/</code>,
+          and public lecture pages into <code>lectures/</code>. This keeps the site simple,
+          reliable, and compatible with GitHub Pages.
+        </p>
+        <div class="button-row">
+          <a class="button" href="private-courses.html">Private tutoring options</a>
+          <a class="button-secondary" href="contact.html">Suggest a topic</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <footer>
-    <p>© 2026 Batuhan Koyuncu. All rights reserved.</p>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <p>© 2026 Batuhan Koyuncu. All rights reserved.</p>
+      <div class="footer-links" aria-label="Footer navigation">
+        <a href="index.html">Home</a>
+        <a href="private-courses.html">Private Tutoring</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
   </footer>
 
+  <script src="assets/js/main.js" defer></script>
 </body>
 </html>
