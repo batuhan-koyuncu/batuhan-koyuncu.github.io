@@ -1,7 +1,11 @@
 (() => {
-  const storedTheme = localStorage.getItem('theme');
-  if (storedTheme === 'light' || storedTheme === 'dark') {
-    document.documentElement.dataset.theme = storedTheme;
+  try {
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme === 'light' || storedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', storedTheme);
+    }
+  } catch (error) {
+    // If localStorage is blocked, the site still follows the system color scheme.
   }
 })();
 
@@ -26,11 +30,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   const themeToggle = document.querySelector('.theme-toggle');
+  const prefersDarkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+  const getActiveTheme = () => {
+    const explicitTheme = document.documentElement.getAttribute('data-theme');
+    if (explicitTheme === 'light' || explicitTheme === 'dark') return explicitTheme;
+    return prefersDarkQuery.matches ? 'dark' : 'light';
+  };
+
   const setThemeButtonText = () => {
     if (!themeToggle) return;
-    const explicitTheme = document.documentElement.dataset.theme;
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const activeTheme = explicitTheme || (prefersDark ? 'dark' : 'light');
+    const activeTheme = getActiveTheme();
     themeToggle.textContent = activeTheme === 'dark' ? 'Light mode' : 'Dark mode';
     themeToggle.setAttribute('aria-label', `Switch to ${activeTheme === 'dark' ? 'light' : 'dark'} mode`);
   };
@@ -38,11 +48,20 @@ document.addEventListener('DOMContentLoaded', () => {
   if (themeToggle) {
     setThemeButtonText();
     themeToggle.addEventListener('click', () => {
-      const current = document.documentElement.dataset.theme || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      const next = current === 'dark' ? 'light' : 'dark';
-      document.documentElement.dataset.theme = next;
-      localStorage.setItem('theme', next);
+      const next = getActiveTheme() === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try {
+        localStorage.setItem('theme', next);
+      } catch (error) {
+        // Theme still changes for the current page even if storage is blocked.
+      }
       setThemeButtonText();
+    });
+
+    prefersDarkQuery.addEventListener?.('change', () => {
+      if (!document.documentElement.getAttribute('data-theme')) {
+        setThemeButtonText();
+      }
     });
   }
 
