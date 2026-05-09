@@ -8,6 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="../assets/css/style.css">
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+  <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 </head>
 
 <body>
@@ -55,24 +68,30 @@
         A basic geometric Brownian motion model is written as
       </p>
 
-      <p class="math-display">
+      <p>
+        $$
         dS = \mu S\,dt + \sigma S\,dW.
+        $$
       </p>
 
       <p>
         For the log-price
       </p>
 
-      <p class="math-display">
+      <p>
+        $$
         q = \ln S,
+        $$
       </p>
 
       <p>
         Itô's lemma gives
       </p>
 
-      <p class="math-display">
-        dq = \left(\mu - \frac{1}{2}\sigma^2\right)dt + \sigma dW.
+      <p>
+        $$
+        dq = \left(\mu - \frac{1}{2}\sigma^2\right)dt + \sigma\,dW.
+        $$
       </p>
 
       <p>
@@ -84,12 +103,13 @@
     <section class="box">
       <h2>Materials</h2>
       <p>
-        The PDF lecture notes and figures will be linked here after they are uploaded into
-        <code>assets/pdf/</code> and <code>assets/img/</code>.
+        The full PDF notes are intended to be stored in <code>assets/pdf/</code> and linked from here.
       </p>
 
       <ul>
-        <li>PDF notes: not linked yet</li>
+        <li>
+          <a href="../assets/pdf/Brownian_Market_Analysis.pdf">Download Brownian Market Analysis PDF</a>
+        </li>
         <li>Python plots: not linked yet</li>
         <li>Hand-sketched figures: not linked yet</li>
       </ul>
