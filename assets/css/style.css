@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.6;
+  color: #222;
+  background: #ffffff;
+}
+
+header {
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+header h1 {
+  margin-bottom: 8px;
+}
+
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: #0066cc;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+  color: #111;
+}
+
+main {
+  margin-bottom: 40px;
+}
+
+footer {
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+  padding-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.box,
+.course-box,
+.offer-box,
+.contact-box,
+.info-box {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  background: #f9f9f9;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 15px;
+  background: #0066cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.button:hover {
+  background: #004999;
+}
+
+.email {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #f0f0f0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
