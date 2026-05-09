@@ -15,3 +15,10 @@ Recommended naming style:
 vector-calculus-spherical-basis.png
 brownian-motion-simulation.png
 et4-bode-plot-example.jpg
+```
+
+After uploading an image here, show it on an HTML page like this:
+
+```html
+<img src="assets/img/brownian-motion-simulation.png" alt="Brownian motion simulation plot">
+```
