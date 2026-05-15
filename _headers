@@ -1,0 +1,17 @@
+# Cloudflare Pages headers for Koyuncu Academy
+# Keep HTML fresh during launch iterations, while allowing static assets to cache normally.
+
+/*.html
+  Cache-Control: public, max-age=300, must-revalidate
+
+/
+  Cache-Control: public, max-age=300, must-revalidate
+
+/assets/img/profile.jpg
+  Cache-Control: public, max-age=3600, must-revalidate
+
+/assets/css/*
+  Cache-Control: public, max-age=86400, must-revalidate
+
+/assets/js/*
+  Cache-Control: public, max-age=86400, must-revalidate
