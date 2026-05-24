@@ -33,6 +33,14 @@
   object-position: center 54%;
 }
 
+.visual-card.library {
+  object-position: center 52%;
+}
+
+.visual-card.lecture {
+  object-position: center 56%;
+}
+
 .media-panel {
   overflow: hidden;
   padding: 0;
@@ -74,6 +82,14 @@
   width: 100%;
   aspect-ratio: 16 / 11;
   object-fit: cover;
+}
+
+.hero-media img.library {
+  object-position: center 52%;
+}
+
+.hero-media img.lecture {
+  object-position: center 56%;
 }
 
 .image-strip {
