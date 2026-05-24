@@ -1,0 +1,220 @@
+/* Stable desktop header/navigation overrides.
+   Loaded after style.css so these rules intentionally tune the shared header
+   without changing every repeated HTML header block. */
+.header-inner {
+  flex-wrap: nowrap;
+}
+
+.brand {
+  flex: 0 1 230px;
+}
+
+.brand-subtitle {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-nav {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+  gap: .16rem;
+}
+
+.site-nav a {
+  flex: 0 0 auto;
+  padding-inline: clamp(.44rem, .62vw, .72rem);
+  font-size: clamp(.84rem, .82vw, .94rem);
+}
+
+.header-actions {
+  flex: 0 0 auto;
+}
+
+.language-switcher,
+.theme-toggle,
+.nav-toggle {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .header-inner {
+    align-items: center;
+  }
+
+  .brand {
+    flex-basis: auto;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 4.7rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: .75rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface-strong);
+    box-shadow: var(--shadow);
+    white-space: normal;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: .8rem 1rem;
+    font-size: .96rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .language-switcher {
+    display: none;
+  }
+}
+
+.hero-card::before {
+  display: none;
+}
+
+.visual-card {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  margin-bottom: 1rem;
+  background: var(--accent-soft);
+}
+
+.visual-card.tall {
+  aspect-ratio: 4 / 3;
+}
+
+.visual-card.compact {
+  aspect-ratio: 16 / 7;
+}
+
+.visual-card.workspace {
+  object-position: center 54%;
+}
+
+.visual-card.blackboard {
+  object-position: center 62%;
+}
+
+.visual-card.classroom {
+  object-position: center 54%;
+}
+
+.visual-card.library {
+  object-position: center 52%;
+}
+
+.visual-card.lecture {
+  object-position: center 56%;
+}
+
+.media-panel {
+  overflow: hidden;
+  padding: 0;
+}
+
+.media-panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+}
+
+.media-panel .media-copy {
+  padding: 1.25rem;
+}
+
+.page-hero.media-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(280px, .95fr);
+  gap: 1.4rem;
+  align-items: center;
+}
+
+.page-hero.media-hero .lead {
+  margin-bottom: 0;
+}
+
+.hero-media {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  background: var(--surface);
+}
+
+.hero-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  object-fit: cover;
+}
+
+.hero-media figcaption {
+  padding: .75rem 1rem 1rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
+.hero-media img.library {
+  object-position: center 52%;
+}
+
+.hero-media img.lecture {
+  object-position: center 56%;
+}
+
+.hero-media img.blackboard {
+  object-position: center 62%;
+}
+
+.image-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.image-strip .panel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article-card .visual-card,
+.card .visual-card,
+.panel .visual-card {
+  box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .page-hero.media-hero,
+  .image-strip {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-media img {
+    aspect-ratio: 16 / 9;
+  }
+}
