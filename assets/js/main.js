@@ -15,7 +15,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const currentPage = document.body.dataset.page;
 
-  if (nav && currentPage === 'lesson-model' && !nav.querySelector('[data-nav="lesson-model"]')) {
+  const isEnglishNavigation = (navigation) => {
+    if (!navigation) return false;
+
+    const hasEnglishHome = navigation.querySelector('a[href="index.html"]');
+    const hasEnglishTutoring = navigation.querySelector('[data-nav="private-courses"], a[href="private-courses.html"]');
+    const hasGermanNav = navigation.querySelector('a[href="nachhilfe.html"], a[href="artikel.html"], a[href="studentenbereich.html"]');
+    const hasTurkishNav = navigation.querySelector('a[href="ozel-ders.html"], a[href="yazilar.html"], a[href="ogrenci-alani.html"]');
+
+    return Boolean(hasEnglishHome && hasEnglishTutoring && !hasGermanNav && !hasTurkishNav);
+  };
+
+  if (nav && isEnglishNavigation(nav) && !nav.querySelector('[data-nav="lesson-model"], a[href="lesson-model.html"]')) {
     const tutoringLink = nav.querySelector('[data-nav="private-courses"]') || nav.querySelector('a[href="private-courses.html"]');
     const lessonLink = document.createElement('a');
     lessonLink.href = 'lesson-model.html';
@@ -29,9 +40,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  nav?.querySelectorAll('a[href="lesson-model.html"]').forEach((link) => {
+    link.dataset.nav = 'lesson-model';
+  });
+
   if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
-      const isOpen = nav.classList.toggle('is-open');
+      const isOpen = nav.classList.toggle('is_open');
       navToggle.setAttribute('aria-expanded', String(isOpen));
     });
   }
@@ -80,9 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // GitHub Pages is static and has no backend spam filtering. Email addresses are split into data attributes
-  // and revealed with JavaScript to reduce basic scraping. For stronger protection later, use an external
-  // form provider such as Tally, Formspree, Google Forms, or a similar service.
   document.querySelectorAll('[data-email-user][data-email-domain]').forEach((element) => {
     const email = `${element.dataset.emailUser}@${element.dataset.emailDomain}`;
     const label = element.dataset.emailLabel || email;
