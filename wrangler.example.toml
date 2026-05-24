@@ -1,0 +1,21 @@
+name = "koyuncuacademy"
+compatibility_date = "2026-05-24"
+pages_build_output_dir = "."
+
+[vars]
+APP_ORIGIN = "https://koyuncuacademy.com"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "koyuncuacademy"
+database_id = "replace-with-cloudflare-d1-database-id"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "MATERIALS_BUCKET"
+bucket_name = "koyuncuacademy-materials"
+
+# Configure as secrets in Cloudflare, not plaintext in the repository:
+# TURNSTILE_SECRET_KEY
+# ADMIN_API_TOKEN
+# LOGIN_LINK_WEBHOOK_URL
