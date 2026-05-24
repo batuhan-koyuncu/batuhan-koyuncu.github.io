@@ -18,7 +18,7 @@ export async function onRequestPost({ request, env, params }) {
   ).bind(now, params.id).run();
 
   if (accessRequest.user_id) {
-    await env.DB.prepare("UPDATE users SET status = 'approved', updated_at = ? WHERE id = ?").bind(now, accessRequest.user_id).run();
+    await env.DB.prepare("UPDATE users SET status = 'approved', role = 'student', updated_at = ? WHERE id = ?").bind(now, accessRequest.user_id).run();
     if (courseId) {
       await env.DB.prepare(
         `INSERT INTO course_members (id, course_id, user_id, access_role, access_starts_at, created_at)
