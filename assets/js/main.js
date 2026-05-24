@@ -13,6 +13,22 @@ document.addEventListener('DOMContentLoaded', () => {
   const navToggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.site-nav');
 
+  const currentPage = document.body.dataset.page;
+
+  if (nav && currentPage === 'lesson-model' && !nav.querySelector('[data-nav="lesson-model"]')) {
+    const tutoringLink = nav.querySelector('[data-nav="private-courses"]') || nav.querySelector('a[href="private-courses.html"]');
+    const lessonLink = document.createElement('a');
+    lessonLink.href = 'lesson-model.html';
+    lessonLink.dataset.nav = 'lesson-model';
+    lessonLink.textContent = 'Lesson Model';
+
+    if (tutoringLink) {
+      tutoringLink.insertAdjacentElement('afterend', lessonLink);
+    } else {
+      nav.appendChild(lessonLink);
+    }
+  }
+
   if (navToggle && nav) {
     navToggle.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('is-open');
@@ -20,7 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  const currentPage = document.body.dataset.page;
   if (currentPage) {
     document.querySelectorAll('.site-nav a').forEach((link) => {
       if (link.dataset.nav === currentPage) {
