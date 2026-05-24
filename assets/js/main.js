@@ -16,13 +16,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const items = {
     en: [["home","Home","index.html"],["private-courses","Tutoring","private-courses.html"],["lesson-model","Lesson Model","lesson-model.html"],["articles","Articles","articles.html"],["student-area","Student Area","student-area.html"],["about","About","about.html"],["contact","Contact","contact.html"]],
-    de: [["home","Start","index.html"],["private-courses","Nachhilfe","nachhilfe.html"],["lesson-model","Unterrichtsmodell","unterrichtsmodell.html"],["articles","Artikel","artikel.html"],["student-area","Studentenbereich","studentenbereich.html"],["about","Über mich","ueber-mich.html"],["contact","Kontakt","kontakt.html"]],
-    tr: [["home","Ana Sayfa","index.html"],["private-courses","Özel Ders","ozel-ders.html"],["lesson-model","Ders Modeli","ders-modeli.html"],["articles","Yazılar","yazilar.html"],["student-area","Öğrenci Alanı","ogrenci-alani.html"],["about","Hakkımda","hakkimda.html"],["contact","İletişim","iletisim.html"]],
+    de: [["home","Start","index.html"],["private-courses","Nachhilfe","nachhilfe.html"],["lesson-model","Unterrichtsmodell","unterrichtsmodell.html"],["articles","Artikel","artikel.html"],["student-area","Studentenbereich","studentenbereich.html"],["about","\u00dcber mich","ueber-mich.html"],["contact","Kontakt","kontakt.html"]],
+    tr: [["home","Ana Sayfa","index.html"],["private-courses","\u00d6zel Ders","ozel-ders.html"],["germany-consulting","Almanya E\u011fitim","almanya-egitim-danismanligi.html"],["lesson-model","Ders Modeli","ders-modeli.html"],["articles","Yaz\u0131lar","yazilar.html"],["student-area","\u00d6\u011frenci Alan\u0131","ogrenci-alani.html"],["about","Hakk\u0131mda","hakkimda.html"],["contact","\u0130leti\u015fim","iletisim.html"]],
   };
 
   const targets = {
     home: ["index.html","de/index.html","tr/index.html"],
     "private-courses": ["private-courses.html","de/nachhilfe.html","tr/ozel-ders.html"],
+    "germany-consulting": ["index.html","de/index.html","tr/almanya-egitim-danismanligi.html"],
     "lesson-model": ["lesson-model.html","de/unterrichtsmodell.html","tr/ders-modeli.html"],
     articles: ["articles.html","de/artikel.html","tr/yazilar.html"],
     "student-area": ["student-area.html","de/studentenbereich.html","tr/ogrenci-alani.html"],
@@ -38,6 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "articles.html": "articles", "artikel.html": "articles", "yazilar.html": "articles",
       "student-area.html": "student-area", "studentenbereich.html": "student-area", "ogrenci-alani.html": "student-area",
       "about.html": "about", "ueber-mich.html": "about", "hakkimda.html": "about",
+      "almanya-egitim-danismanligi.html": "germany-consulting", "almanyada-egitim.html": "germany-consulting",
       "contact.html": "contact", "kontakt.html": "contact", "iletisim.html": "contact",
     };
     return aliases[file] || "home";
