@@ -2,22 +2,27 @@
 
 ## Visual strategy
 
-Koyuncu Academy uses a small set of realistic academic images rather than decorative stock photography. The goal is to make the website feel serious, trustworthy, international and academic without implying affiliation with a specific school or university.
+Koyuncu Academy uses distinct page-level visuals rather than repeating one generic stock scene. The goal is to make the website feel serious, trustworthy, international and academic without implying affiliation with a specific school or university.
 
 - **Generated premium hero:** supports the English homepage and overall boutique academic brand.
-- **Generated technical workflow:** supports engineering, IT, programming, report and project pages.
-- **Generated student platform:** supports student-area, protected material, assessment and access pages.
-- **German lecture hall:** supports the German pages with a serious German/European higher-education atmosphere.
-- **Turkish study library:** supports the Turkish pages with a culturally closer study-library setting for Turkish-speaking students and families.
+- **Generated service photography:** supports university tutoring, exam preparation, lesson model, business/project support, technical workflow and the Turkish-only Germany education planning page.
+- **Generated student platform:** supports the student-area and protected-material concept.
+- **German route-specific visuals:** support German pages with a serious German/European higher-education atmosphere.
+- **Turkish route-specific visuals:** support Turkish pages with culturally closer study and study-planning motifs.
+- **Route-specific academic plates:** give smaller pages, legal pages, localized subpages and article/detail pages their own distinct primary visual without adding heavy files.
 - **International library:** remains available as a secondary global academic image.
 - **Mathematics blackboard:** supports public-resource pages by reinforcing derivation-based physics and mathematics tutoring.
 ### Homepage strategy
 
-The homepage should use one common brand-level hero image across EN / DE / TR. The common image gives the site a stable visual identity and makes the language versions feel like one coherent platform.
+The homepage should keep one coherent brand family across EN / DE / TR, while each language homepage still receives a distinct primary visual so the language versions do not feel duplicated.
 
 - **Common homepage / brand image:** `assets/img/ka-home-stem-tutoring-main.png`
-  - Used for the main homepage hero across EN / DE / TR.
+  - Used for the English homepage hero and as part of the wider brand image family.
   - Represents focused academic work, STEM tutoring, exam preparation and calm university-style learning.
+- **German homepage plate:** `assets/img/ka-de-home.svg`
+  - Provides a German-specific academic route visual.
+- **Turkish homepage plate:** `assets/img/ka-tr-home.svg`
+  - Provides a Turkish-specific academic route visual.
 
 ### Language-specific supporting strategy
 
@@ -36,11 +41,24 @@ These images were uploaded by the site owner for Koyuncu Academy visual branding
 
 | Asset | Original uploaded file | Source / Provider | License / Ownership note | Usage |
 | --- | --- | --- | --- | --- |
-| `assets/img/ka-home-stem-tutoring-main.png` | `assets/img/ChatGPT Image 24. Mai 2026, 12_50_57.png` | User-provided AI-generated visual | Provided by the site owner for Koyuncu Academy | Common EN/DE/TR homepage hero |
+| `assets/img/ka-home-stem-tutoring-main.png` | `assets/img/ChatGPT Image 24. Mai 2026, 12_50_57.png` | User-provided AI-generated visual | Provided by the site owner for Koyuncu Academy | English homepage hero and brand-level academic visual |
 | `assets/img/ka-online-lesson-model.png` | `assets/img/ChatGPT Image 24. Mai 2026, 13_00_14.png` | User-provided AI-generated visual | Provided by the site owner for Koyuncu Academy | Lesson model / online tutoring visual |
 | `assets/img/ka-stem-private-tutoring.png` | `assets/img/ChatGPT Image 24. Mai 2026, 13_04_10.png` | User-provided AI-generated visual | Provided by the site owner for Koyuncu Academy | STEM tutoring and lesson-format support |
 | `assets/img/ka-student-area-workspace.png` | `assets/img/ChatGPT Image 24. Mai 2026, 13_15_35.png` | User-provided AI-generated visual | Provided by the site owner for Koyuncu Academy | Student area / digital materials / planning |
 | `assets/img/ka-engineering-data-workspace.png` | `assets/img/ChatGPT Image 24. Mai 2026, 12_50_43.png` | User-provided AI-generated visual | Provided by the site owner for Koyuncu Academy | Engineering, data, statistics and German supporting visual |
+
+## Generated project assets
+
+These assets were generated for the page-personalization pass and optimized or kept lightweight for the static site.
+
+| Asset | Source / Provider | License / Ownership note | Usage |
+| --- | --- | --- | --- |
+| `assets/img/ka-university-tutoring.jpg` | OpenAI image generation | Generated for this project | University tutoring page visual |
+| `assets/img/ka-exam-preparation.jpg` | OpenAI image generation | Generated for this project | Exam preparation page visual |
+| `assets/img/ka-business-projects.jpg` | OpenAI image generation | Generated for this project | Business, taxation and project support page visual |
+| `assets/img/ka-lesson-method.jpg` | OpenAI image generation | Generated for this project | Reserved lesson-method visual |
+| `assets/img/ka-turkish-germany-planning.jpg` | OpenAI image generation | Generated for this project | Turkish-only Germany education planning page visual |
+| `assets/img/ka-*.svg` | Repository-generated SVG visuals | Generated for this project | Distinct primary visuals for smaller pages, localized subpages, legal pages and article/detail pages |
 
 ## Legacy public-stock assets
 
