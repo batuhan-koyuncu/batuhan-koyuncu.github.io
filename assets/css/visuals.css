@@ -1,3 +1,90 @@
+/* Stable desktop header/navigation overrides.
+   Loaded after style.css so these rules intentionally tune the shared header
+   without changing every repeated HTML header block. */
+.header-inner {
+  flex-wrap: nowrap;
+}
+
+.brand {
+  flex: 0 1 230px;
+}
+
+.brand-subtitle {
+  max-width: 230px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.site-nav {
+  flex: 1 1 auto;
+  justify-content: center;
+  min-width: 0;
+  gap: .16rem;
+}
+
+.site-nav a {
+  flex: 0 0 auto;
+  padding-inline: clamp(.44rem, .62vw, .72rem);
+  font-size: clamp(.84rem, .82vw, .94rem);
+}
+
+.header-actions {
+  flex: 0 0 auto;
+}
+
+.language-switcher,
+.theme-toggle,
+.nav-toggle {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1280px) {
+  .header-inner {
+    align-items: center;
+  }
+
+  .brand {
+    flex-basis: auto;
+  }
+
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .site-nav {
+    position: absolute;
+    left: 1rem;
+    right: 1rem;
+    top: 4.7rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: .75rem;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: var(--surface-strong);
+    box-shadow: var(--shadow);
+    white-space: normal;
+  }
+
+  .site-nav.is-open {
+    display: flex;
+  }
+
+  .site-nav a {
+    padding: .8rem 1rem;
+    font-size: .96rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .language-switcher {
+    display: none;
+  }
+}
+
 .hero-card::before {
   display: none;
 }
@@ -84,12 +171,22 @@
   object-fit: cover;
 }
 
+.hero-media figcaption {
+  padding: .75rem 1rem 1rem;
+  color: var(--muted);
+  font-size: .92rem;
+}
+
 .hero-media img.library {
   object-position: center 52%;
 }
 
 .hero-media img.lecture {
   object-position: center 56%;
+}
+
+.hero-media img.blackboard {
+  object-position: center 62%;
 }
 
 .image-strip {
