@@ -1,0 +1,13 @@
+.header-button{padding:.52rem .8rem;font-size:.92rem}
+.form-panel{display:grid;gap:1rem}
+.form-panel label{display:grid;gap:.4rem;color:var(--ink);font-weight:700}
+.form-panel input,.form-panel textarea,.form-panel select{width:100%;border:1px solid var(--line);border-radius:14px;padding:.82rem .9rem;color:var(--ink);background:var(--surface-strong);font:inherit}
+.form-panel textarea{resize:vertical}
+.form-panel input:focus,.form-panel textarea:focus,.form-panel select:focus{outline:3px solid color-mix(in srgb,var(--accent) 28%,transparent);border-color:var(--accent)}
+.check-row{display:flex!important;grid-template-columns:auto 1fr;align-items:start;gap:.65rem!important;color:var(--muted)!important;font-weight:600!important}
+.check-row input{width:auto;margin-top:.35rem}
+.form-note{margin:.2rem 0 0;color:var(--muted);font-size:.94rem}
+.check-list{display:grid;gap:.65rem;margin:1rem 0 0;padding:0;list-style:none}
+.check-list li{position:relative;padding-left:1.45rem;color:var(--muted)}
+.check-list li::before{content:"";position:absolute;left:0;top:.62rem;width:.5rem;height:.5rem;border-radius:50%;background:var(--gold)}
+pre.math-block code{display:block;white-space:pre;overflow-x:auto;background:transparent;padding:0}
