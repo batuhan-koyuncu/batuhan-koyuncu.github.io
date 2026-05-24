@@ -49,6 +49,47 @@ document.addEventListener("DOMContentLoaded", () => {
     return `../${path}`;
   }
 
+  function replaceLocalizedLegacyVisuals() {
+    if (lang === "en") return;
+
+    const localizedVisuals = {
+      de: {
+        "ka-german-lecture-hall.jpg": {
+          src: "../assets/img/ka-engineering-data-workspace.png",
+          className: "visual-card workspace compact",
+          alt: "Technischer Lernarbeitsplatz mit Laptop, Diagrammen und Planungsmaterialien fuer strukturierte Nachhilfe."
+        },
+        "ka-international-library.jpg": {
+          src: "../assets/img/ka-home-stem-tutoring-main.png",
+          className: "visual-card workspace compact",
+          alt: "Akademischer Arbeitsplatz mit Laptop, Notizbuch und STEM-Diagrammen fuer Koyuncu Academy."
+        }
+      },
+      tr: {
+        "ka-turkish-study-library.jpg": {
+          src: "../assets/img/ka-student-area-workspace.png",
+          className: "visual-card workspace compact",
+          alt: "Dijital ogrenci calisma alani, laptop, telefon, defter ve planlama materyalleri."
+        },
+        "ka-international-library.jpg": {
+          src: "../assets/img/ka-home-stem-tutoring-main.png",
+          className: "visual-card workspace compact",
+          alt: "Profesyonel ozel ders ve sinav hazirligi icin laptop, defter ve STEM diyagramlari bulunan calisma alani."
+        }
+      }
+    };
+
+    const replacements = localizedVisuals[lang] || {};
+    document.querySelectorAll("img[src]").forEach((image) => {
+      const key = Object.keys(replacements).find((name) => image.getAttribute("src")?.includes(name));
+      if (!key) return;
+      const replacement = replacements[key];
+      image.setAttribute("src", replacement.src);
+      image.setAttribute("alt", replacement.alt);
+      image.className = replacement.className;
+    });
+  }
+
   if (nav) {
     nav.innerHTML = items[lang].map(([key,label,href]) =>
       `<a href="${href}" data-nav="${key}"${key === page ? ' aria-current="page"' : ""}>${label}</a>`
@@ -61,6 +102,8 @@ document.addEventListener("DOMContentLoaded", () => {
       `<a href="${localHref(path)}" hreflang="${code}"${code === lang ? ' aria-current="true"' : ""}>${label}</a>`
     ).join("");
   }
+
+  replaceLocalizedLegacyVisuals();
 
   if (navToggle && nav) {
     navToggle.addEventListener("click", () => {
