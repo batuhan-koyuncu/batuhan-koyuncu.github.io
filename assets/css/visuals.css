@@ -100,6 +100,24 @@
   background: var(--accent-soft);
 }
 
+/* Hard visual replacement for legacy localized stock photos.
+   These rules prevent the unwanted lecture-hall and study-library photos from rendering
+   even if an older compressed HTML page still contains their filenames. */
+img[src*="ka-german-lecture-hall.jpg"] {
+  content: url("../img/ka-engineering-data-workspace.png");
+  object-position: center 54%;
+}
+
+img[src*="ka-turkish-study-library.jpg"] {
+  content: url("../img/ka-student-area-workspace.png");
+  object-position: center 54%;
+}
+
+img[src*="ka-international-library.jpg"] {
+  content: url("../img/ka-home-stem-tutoring-main.png");
+  object-position: center 54%;
+}
+
 .visual-card.tall {
   aspect-ratio: 4 / 3;
 }
