@@ -1,3 +1,5 @@
+@import url("language-visuals.css");
+
 /* Stable desktop header/navigation overrides.
    Loaded after style.css so these rules intentionally tune the shared header
    without changing every repeated HTML header block. */
