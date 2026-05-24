@@ -1,0 +1,7 @@
+html[lang="en"] .hero-card .visual-card{filter:saturate(.92) contrast(.98)}
+html[lang="de"] .hero-card .visual-card{filter:saturate(.92) contrast(.98);object-position:center 56%}
+html[lang="tr"] .hero-card .visual-card{filter:saturate(.92) contrast(.98);object-position:center 52%}
+html[lang="en"] .panel:not(:has(img)):first-of-type{background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 84%,transparent),color-mix(in srgb,var(--surface) 97%,transparent)),url("../img/ka-international-library.jpg") center 52%/cover;overflow:hidden}
+html[lang="de"] .panel:not(:has(img)):first-of-type{background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 84%,transparent),color-mix(in srgb,var(--surface) 97%,transparent)),url("../img/ka-german-lecture-hall.jpg") center 56%/cover;overflow:hidden}
+html[lang="tr"] .panel:not(:has(img)):first-of-type{background:linear-gradient(180deg,color-mix(in srgb,var(--surface) 84%,transparent),color-mix(in srgb,var(--surface) 97%,transparent)),url("../img/ka-turkish-study-library.jpg") center 52%/cover;overflow:hidden}
+@media(max-width:900px){html[lang] .panel:not(:has(img)):first-of-type{background-image:none}}
