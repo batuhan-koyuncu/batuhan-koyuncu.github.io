@@ -1,26 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://koyuncuacademy.com/</loc><priority>1.0</priority></url>
-  <url><loc>https://koyuncuacademy.com/private-courses.html</loc><priority>0.9</priority></url>
-  <url><loc>https://koyuncuacademy.com/lesson-model.html</loc><priority>0.8</priority></url>
-  <url><loc>https://koyuncuacademy.com/articles.html</loc><priority>0.7</priority></url>
-  <url><loc>https://koyuncuacademy.com/student-area.html</loc><priority>0.6</priority></url>
-  <url><loc>https://koyuncuacademy.com/courses.html</loc><priority>0.8</priority></url>
-  <url><loc>https://koyuncuacademy.com/about.html</loc><priority>0.7</priority></url>
-  <url><loc>https://koyuncuacademy.com/contact.html</loc><priority>0.9</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/</loc><priority>1.0</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/nachhilfe.html</loc><priority>0.9</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/unterrichtsmodell.html</loc><priority>0.8</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/artikel.html</loc><priority>0.7</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/studentenbereich.html</loc><priority>0.6</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/kurse.html</loc><priority>0.8</priority></url>
-  <url><loc>https://koyuncuacademy.com/de/kontakt.html</loc><priority>0.9</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/</loc><priority>1.0</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/ozel-ders.html</loc><priority>0.9</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/ders-modeli.html</loc><priority>0.8</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/almanyada-egitim.html</loc><priority>0.9</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/yazilar.html</loc><priority>0.7</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/ogrenci-alani.html</loc><priority>0.6</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/hakkimda.html</loc><priority>0.7</priority></url>
-  <url><loc>https://koyuncuacademy.com/tr/iletisim.html</loc><priority>0.9</priority></url>
+<url><loc>https://koyuncuacademy.com/</loc></url>
+<url><loc>https://koyuncuacademy.com/private-courses.html</loc></url>
+<url><loc>https://koyuncuacademy.com/university-tutoring.html</loc></url>
+<url><loc>https://koyuncuacademy.com/exam-preparation.html</loc></url>
+<url><loc>https://koyuncuacademy.com/technical-support.html</loc></url>
+<url><loc>https://koyuncuacademy.com/business-taxation-projects.html</loc></url>
+<url><loc>https://koyuncuacademy.com/student-area.html</loc></url>
+<url><loc>https://koyuncuacademy.com/resources.html</loc></url>
+<url><loc>https://koyuncuacademy.com/about.html</loc></url>
+<url><loc>https://koyuncuacademy.com/contact.html</loc></url>
+<url><loc>https://koyuncuacademy.com/de/</loc></url>
+<url><loc>https://koyuncuacademy.com/tr/</loc></url>
+<url><loc>https://koyuncuacademy.com/tr/almanya-egitim-danismanligi.html</loc></url>
 </urlset>

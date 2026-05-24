@@ -1,0 +1,2 @@
+import { fail, json } from "../../_lib/api.js";
+export async function onRequestPost({ request, env }) { if (!env.DB) return fail("D1 binding DB is not configured.", 500); if (!env.PAYPAL_WEBHOOK_ID) return fail("PayPal webhook verification is not configured.", 500); await request.text(); return json({ ok: false, error: "PayPal webhook endpoint is scaffolded. Add PayPal signature verification before accepting events." }, 501); }
