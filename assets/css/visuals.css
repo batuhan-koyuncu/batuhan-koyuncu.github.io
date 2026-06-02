@@ -3,13 +3,10 @@
    without changing every repeated HTML header block. */
 .header-inner {
   flex-wrap: nowrap;
-  display: grid;
-  grid-template-columns: 230px minmax(0, 1fr) auto;
-  align-items: center;
 }
 
 .brand {
-  min-width: 0;
+  flex: 0 0 230px;
 }
 
 .brand-subtitle {
@@ -24,10 +21,9 @@
 }
 
 .site-nav {
-  width: 100%;
-  min-width: 0;
+  flex: 1 1 auto;
   justify-content: center;
-  justify-self: center;
+  min-width: 0;
   gap: .16rem;
 }
 
@@ -38,7 +34,6 @@
 }
 
 .header-actions {
-  justify-self: end;
   flex: 0 0 auto;
 }
 
@@ -50,7 +45,6 @@
 
 @media (max-width: 1280px) {
   .header-inner {
-    display: flex;
     align-items: center;
   }
 
@@ -71,8 +65,6 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    justify-self: auto;
-    width: auto;
     padding: .75rem;
     border: 1px solid var(--line);
     border-radius: 18px;
@@ -150,6 +142,24 @@
   border-radius: 18px;
   margin-bottom: 1rem;
   background: var(--accent-soft);
+}
+
+/* Hard visual replacement for legacy localized stock photos.
+   These rules prevent the unwanted lecture-hall and study-library photos from rendering
+   even if an older compressed HTML page still contains their filenames. */
+img[src*="ka-german-lecture-hall.jpg"] {
+  content: url("../img/ka-engineering-data-workspace.png");
+  object-position: center 54%;
+}
+
+img[src*="ka-turkish-study-library.jpg"] {
+  content: url("../img/ka-student-area-workspace.png");
+  object-position: center 54%;
+}
+
+img[src*="ka-international-library.jpg"] {
+  content: url("../img/ka-home-stem-tutoring-main.png");
+  object-position: center 54%;
 }
 
 .visual-card.tall {
@@ -268,5 +278,148 @@
 
   .hero-media img {
     aspect-ratio: 16 / 9;
+  }
+}
+
+.cta-row .button {
+  padding-inline: 1.25rem;
+}
+
+.contact-cta {
+  border-color: color-mix(in srgb, var(--gold) 48%, var(--line));
+}
+
+.panel-feature {
+  border-color: color-mix(in srgb, var(--gold) 38%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.secondary-panel {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.secondary-panel .eyebrow {
+  color: color-mix(in srgb, var(--gold) 72%, var(--muted));
+}
+
+.first-message-panel {
+  border-color: color-mix(in srgb, var(--blue) 32%, var(--line));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue-soft) 72%, transparent), color-mix(in srgb, var(--surface) 92%, transparent));
+}
+
+.first-message-panel .check-list {
+  margin-top: 1.1rem;
+}
+
+html[lang="tr"] body[data-page="home"] .hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.5rem, 5.9vw, 4.7rem);
+  line-height: 1.08;
+}
+
+/* Stable full-width header layout across languages.
+   The brand row is separated from navigation so DE/TR label length cannot
+   squeeze or hide the Koyuncu Academy wordmark. */
+.header-inner {
+  width: 100%;
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "brand brand"
+    "nav actions";
+  gap: 0;
+  padding: 0;
+  align-items: stretch;
+}
+
+.brand {
+  grid-area: brand;
+  width: 100%;
+  flex: none;
+  align-items: center;
+  padding: 1.05rem clamp(1rem, 4vw, 2rem) .95rem;
+  border-bottom: 1px solid var(--line);
+  background: color-mix(in srgb, var(--surface-strong) 88%, transparent);
+  text-align: center;
+}
+
+.brand-name {
+  font-size: clamp(1.45rem, 2.1vw, 2.05rem);
+}
+
+.brand-subtitle {
+  max-width: none;
+  width: 100%;
+  text-align: center;
+}
+
+.site-nav {
+  grid-area: nav;
+  justify-content: flex-start;
+  padding: .78rem 0 .78rem clamp(1rem, 4vw, 2rem);
+}
+
+.header-actions {
+  grid-area: actions;
+  justify-content: flex-end;
+  padding: .78rem clamp(1rem, 4vw, 2rem) .78rem .75rem;
+}
+
+@media (max-width: 1280px) {
+  .header-inner {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "actions";
+  }
+
+  .brand {
+    flex-basis: auto;
+  }
+
+  .header-actions {
+    width: 100%;
+    justify-content: flex-end;
+    padding-inline: clamp(1rem, 4vw, 2rem);
+  }
+
+  .site-nav {
+    top: calc(100% + .5rem);
+  }
+}
+
+@media (max-width: 900px) {
+  .site-header .header-inner {
+    width: 100%;
+    padding-block: 0;
+  }
+
+  .site-header .brand {
+    width: 100%;
+    min-width: 0;
+    padding-block: .9rem .8rem;
+  }
+
+  .site-header .brand-name {
+    font-size: clamp(1.3rem, 5.4vw, 1.75rem);
+  }
+
+  .site-header .brand-subtitle {
+    max-width: none;
+  }
+}
+
+@media (max-width: 700px) {
+  .site-header .header-inner {
+    width: 100%;
+  }
+
+  .site-header .brand {
+    flex: none;
+  }
+
+  .site-header .header-actions {
+    flex: none;
   }
 }
