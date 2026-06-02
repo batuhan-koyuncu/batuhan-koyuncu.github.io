@@ -1,0 +1,315 @@
+/* Mobile-only layout refinements. Loaded after style.css and visuals.css. */
+
+@media (max-width: 900px) {
+  html,
+  body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    position: sticky;
+  }
+
+  .header-inner {
+    width: min(100% - 1.25rem, var(--max-width));
+    align-items: center;
+    gap: .75rem;
+    padding: .7rem 0;
+  }
+
+  .brand {
+    min-width: 0;
+  }
+
+  .brand-name {
+    font-size: 1.05rem;
+  }
+
+  .brand-subtitle {
+    max-width: 220px;
+    font-size: .72rem;
+  }
+
+  .header-actions {
+    gap: .35rem;
+  }
+
+  .site-nav {
+    left: .75rem;
+    right: .75rem;
+    top: 4.45rem;
+    max-height: calc(100vh - 5.25rem);
+    overflow-y: auto;
+    border-radius: 14px;
+  }
+
+  .site-nav a {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    border-radius: 12px;
+  }
+
+  .hero {
+    padding: 3rem 0 2rem;
+  }
+
+  .hero-grid,
+  .page-hero.media-hero,
+  .grid-2,
+  .grid-3,
+  .grid-4,
+  .stats-row,
+  .footer-inner,
+  .article-layout {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    max-width: 18ch;
+    font-size: clamp(2.35rem, 8vw, 3.7rem);
+  }
+
+  .page-title {
+    font-size: clamp(2rem, 7vw, 3.2rem);
+  }
+
+  .lead {
+    font-size: 1.05rem;
+  }
+
+  .hero-card,
+  .card,
+  .panel,
+  .article-card,
+  .profile-card,
+  .feature-card,
+  .course-box,
+  .offer-box,
+  .contact-box,
+  .info-box {
+    border-radius: 14px;
+  }
+
+  .priority-grid .panel-feature {
+    order: 1;
+  }
+
+  .priority-grid .secondary-panel {
+    order: 2;
+  }
+
+  .visual-card,
+  .hero-visual img,
+  .hero-media img {
+    aspect-ratio: 16 / 10;
+  }
+
+  .visual-card.compact {
+    aspect-ratio: 16 / 9;
+  }
+
+  .check-list li,
+  .method-list li {
+    padding-left: 1.35rem;
+  }
+
+  .footer-inner {
+    text-align: left;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 700px) {
+  .header-inner,
+  .section,
+  .page-hero,
+  .hero,
+  .footer-inner,
+  .article-layout {
+    width: min(100% - 1rem, var(--max-width));
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+  }
+
+  .brand {
+    flex: 1 1 calc(100% - 150px);
+  }
+
+  .header-actions {
+    flex: 1 1 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .language-switcher {
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    gap: .25rem;
+  }
+
+  .language-switcher a,
+  .theme-toggle,
+  .nav-toggle {
+    min-height: 40px;
+    padding: .48rem .6rem;
+    font-size: .86rem;
+  }
+
+  .site-nav {
+    top: 7.35rem;
+  }
+
+  .section {
+    padding: 2.35rem 0;
+  }
+
+  .page-hero {
+    padding: 2.8rem 0 1.5rem;
+  }
+
+  .hero-grid {
+    gap: 1.25rem;
+  }
+
+  h1 {
+    max-width: 100%;
+    letter-spacing: 0;
+  }
+
+  h2 {
+    font-size: clamp(1.55rem, 6vw, 2.2rem);
+  }
+
+  .button-row {
+    gap: .55rem;
+  }
+
+  .button,
+  .button-secondary,
+  .button-ghost,
+  .button-disabled {
+    width: 100%;
+    min-height: 46px;
+    padding: .82rem .95rem;
+    text-align: center;
+  }
+
+  .cta-row .button {
+    order: 1;
+  }
+
+  .cta-row .contact-cta {
+    order: 2;
+  }
+
+  .cta-row .button-secondary:not(.contact-cta) {
+    order: 3;
+  }
+
+  .tag-list,
+  .hero-proof {
+    gap: .4rem;
+  }
+
+  .tag-list li,
+  .hero-proof li,
+  .tag {
+    max-width: 100%;
+    font-size: .82rem;
+    line-height: 1.25;
+  }
+
+  .card,
+  .panel,
+  .callout,
+  .article-card,
+  .profile-card,
+  .feature-card {
+    padding: 1rem;
+  }
+
+  .form-panel input,
+  .form-panel textarea,
+  .form-panel select {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    flex-basis: 100%;
+  }
+
+  .brand-subtitle {
+    display: none;
+  }
+
+  .header-actions {
+    align-items: stretch;
+  }
+
+  .language-switcher {
+    width: 100%;
+  }
+
+  .language-switcher a {
+    flex: 1 1 0;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .theme-toggle,
+  .nav-toggle {
+    flex: 1 1 calc(50% - .2rem);
+    justify-content: center;
+  }
+
+  .site-nav {
+    top: 8.9rem;
+  }
+
+  .hero {
+    padding-top: 2.25rem;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 11vw, 2.65rem);
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .eyebrow {
+    font-size: .7rem;
+    letter-spacing: .1em;
+  }
+
+  .visual-card,
+  .hero-visual img,
+  .hero-media img,
+  .visual-card.compact {
+    aspect-ratio: 4 / 3;
+  }
+
+  .metric {
+    font-size: .92rem;
+  }
+
+  .footer-links {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: .55rem;
+  }
+
+  .footer-links a {
+    overflow-wrap: anywhere;
+  }
+}

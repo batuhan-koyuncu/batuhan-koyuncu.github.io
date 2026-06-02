@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const targets = {
-    home: ["index.html","de/index.html","tr/index.html"],
+    home: ["/","/de/","/tr/"],
     "private-courses": ["private-courses.html","de/nachhilfe.html","tr/ozel-ders.html"],
     "germany-consulting": ["index.html","de/index.html","tr/almanya-egitim-danismanligi.html"],
     "lesson-model": ["lesson-model.html","de/unterrichtsmodell.html","tr/ders-modeli.html"],
@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function localHref(path) {
+    if (path.startsWith("/")) return path;
     if (lang === "en") return path;
     if (path.startsWith(`${lang}/`)) return path.slice(3);
     return `../${path}`;
