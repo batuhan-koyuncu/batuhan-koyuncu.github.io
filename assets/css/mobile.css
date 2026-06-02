@@ -217,99 +217,44 @@
   .hero-proof {
     gap: .4rem;
   }
-
-  .tag-list li,
-  .hero-proof li,
-  .tag {
-    max-width: 100%;
-    font-size: .82rem;
-    line-height: 1.25;
-  }
-
-  .card,
-  .panel,
-  .callout,
-  .article-card,
-  .profile-card,
-  .feature-card {
-    padding: 1rem;
-  }
-
-  .form-panel input,
-  .form-panel textarea,
-  .form-panel select {
-    font-size: 1rem;
-  }
 }
 
-@media (max-width: 520px) {
-  .brand {
-    flex-basis: 100%;
-  }
-
-  .brand-subtitle {
-    display: none;
-  }
-
-  .header-actions {
+/* Desktop header alignment matching the requested sketch.
+   The brand remains centered in the top row. The navigation sits centered in
+   the lower row's open space, while language and theme controls remain on the right. */
+@media (min-width: 1281px) {
+  .site-header .header-inner {
+    display: grid;
+    grid-template-columns: minmax(2rem, 1fr) minmax(auto, 860px) minmax(300px, 1fr);
+    grid-template-areas:
+      "brand brand brand"
+      ". nav actions";
     align-items: stretch;
-  }
-
-  .language-switcher {
     width: 100%;
+    max-width: none;
+    padding: 0;
   }
 
-  .language-switcher a {
-    flex: 1 1 0;
-    justify-content: center;
+  .site-header .brand {
+    grid-area: brand;
+    justify-self: center;
+    width: 100%;
     text-align: center;
   }
 
-  .theme-toggle,
-  .nav-toggle {
-    flex: 1 1 calc(50% - .2rem);
+  .site-header .site-nav {
+    grid-area: nav;
+    justify-self: center;
     justify-content: center;
+    width: max-content;
+    max-width: 100%;
+    padding: .78rem 0;
   }
 
-  .site-nav {
-    top: 8.9rem;
-  }
-
-  .hero {
-    padding-top: 2.25rem;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 11vw, 2.65rem);
-  }
-
-  .lead {
-    font-size: 1rem;
-  }
-
-  .eyebrow {
-    font-size: .7rem;
-    letter-spacing: .1em;
-  }
-
-  .visual-card,
-  .hero-visual img,
-  .hero-media img,
-  .visual-card.compact {
-    aspect-ratio: 4 / 3;
-  }
-
-  .metric {
-    font-size: .92rem;
-  }
-
-  .footer-links {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: .55rem;
-  }
-
-  .footer-links a {
-    overflow-wrap: anywhere;
+  .site-header .header-actions {
+    grid-area: actions;
+    justify-self: end;
+    justify-content: flex-end;
+    padding: .78rem clamp(1rem, 4vw, 2rem) .78rem .75rem;
   }
 }
