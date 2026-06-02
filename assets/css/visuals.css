@@ -89,6 +89,23 @@
   display: none;
 }
 
+.hero-card .metric-list {
+  display: grid;
+  gap: .82rem;
+}
+
+.hero-card .metric {
+  line-height: 1.45;
+}
+
+.hero-card .metric strong {
+  display: block;
+  margin-bottom: .22rem;
+  color: var(--ink);
+  font-weight: 850;
+  line-height: 1.2;
+}
+
 .visual-card {
   display: block;
   width: 100%;
