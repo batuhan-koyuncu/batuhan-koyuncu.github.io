@@ -276,3 +276,33 @@ img[src*="ka-international-library.jpg"] {
     aspect-ratio: 16 / 9;
   }
 }
+
+.cta-row .button {
+  padding-inline: 1.25rem;
+}
+
+.contact-cta {
+  border-color: color-mix(in srgb, var(--gold) 48%, var(--line));
+}
+
+.panel-feature {
+  border-color: color-mix(in srgb, var(--gold) 38%, var(--line));
+  box-shadow: var(--shadow);
+}
+
+.secondary-panel {
+  background: color-mix(in srgb, var(--surface) 82%, transparent);
+}
+
+.secondary-panel .eyebrow {
+  color: color-mix(in srgb, var(--gold) 72%, var(--muted));
+}
+
+.first-message-panel {
+  border-color: color-mix(in srgb, var(--blue) 32%, var(--line));
+  background: linear-gradient(135deg, color-mix(in srgb, var(--blue-soft) 72%, transparent), color-mix(in srgb, var(--surface) 92%, transparent));
+}
+
+.first-message-panel .check-list {
+  margin-top: 1.1rem;
+}
