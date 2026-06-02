@@ -6,13 +6,17 @@
 }
 
 .brand {
-  flex: 0 1 230px;
+  flex: 0 0 230px;
 }
 
 .brand-subtitle {
   max-width: 230px;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.brand-name {
   white-space: nowrap;
 }
 
@@ -305,4 +309,10 @@ img[src*="ka-international-library.jpg"] {
 
 .first-message-panel .check-list {
   margin-top: 1.1rem;
+}
+
+html[lang="tr"] body[data-page="home"] .hero h1 {
+  max-width: 18ch;
+  font-size: clamp(2.5rem, 5.9vw, 4.7rem);
+  line-height: 1.08;
 }
