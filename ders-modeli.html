@@ -1,0 +1,538 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ders Modeli | Koyuncu Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-container": "#fed65b",
+                        "surface-container-low": "#f5f3f3",
+                        "on-tertiary-container": "#8a8983",
+                        "oxford-blue": "#0E2433",
+                        "parchment-white": "#FDFBF3",
+                        "surface-dim": "#dbdad9",
+                        "outline": "#73777c",
+                        "on-tertiary-fixed-variant": "#474742",
+                        "surface-container-highest": "#e4e2e2",
+                        "surface": "#fbf9f8",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-secondary-fixed": "#241a00",
+                        "surface-container": "#efeded",
+                        "primary-fixed": "#cfe5fa",
+                        "on-surface": "#1b1c1c",
+                        "inverse-primary": "#b3c9dd",
+                        "error": "#ba1a1a",
+                        "success-green": "#2D6A4F",
+                        "tertiary": "#0b0c08",
+                        "on-background": "#1b1c1c",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-secondary": "#ffffff",
+                        "on-primary-fixed": "#061d2c",
+                        "tertiary-fixed-dim": "#c8c7bf",
+                        "on-secondary-container": "#745c00",
+                        "outline-variant": "#c3c7cc",
+                        "on-primary-fixed-variant": "#344959",
+                        "surface-container-high": "#e9e8e7",
+                        "tertiary-container": "#22221d",
+                        "background": "#fbf9f8",
+                        "primary-container": "#0e2433",
+                        "secondary-fixed": "#ffe088",
+                        "surface-variant": "#e4e2e2",
+                        "tertiary-fixed": "#e4e3db",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-primary-container": "#778c9e",
+                        "on-error": "#ffffff",
+                        "surface-tint": "#4c6172",
+                        "academy-gold": "#D4AF37",
+                        "primary": "#000d18",
+                        "on-primary": "#ffffff",
+                        "inverse-on-surface": "#f2f0f0",
+                        "on-error-container": "#93000a",
+                        "inverse-surface": "#303031",
+                        "secondary": "#735c00",
+                        "slate-gray": "#666666",
+                        "on-surface-variant": "#43474c",
+                        "on-tertiary-fixed": "#1b1c17",
+                        "error-red": "#BC4749",
+                        "surface-bright": "#fbf9f8",
+                        "primary-fixed-dim": "#b3c9dd"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "button": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "body-sm": ["Inter"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "button": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .math-grid {
+            background-image: 
+                linear-gradient(to right, rgba(14, 36, 51, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(14, 36, 51, 0.05) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .scroll-reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(14, 36, 51, 0.1);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 70% 30%, rgba(212, 175, 55, 0.08) 0%, transparent 50%);
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(1deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .step-connector {
+            background: linear-gradient(to bottom, #D4AF37 0%, #D4AF37 50%, transparent 50%);
+            background-size: 2px 20px;
+        }
+    
+        html { scroll-padding-top: 9rem; }
+        [id] { scroll-margin-top: 9rem; }
+            .footer-credit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            color: rgba(242, 240, 240, 0.62);
+            font-size: 0.75rem;
+            line-height: 1rem;
+            transition: color 0.2s ease;
+        }
+        .footer-credit:hover {
+            color: #D4AF37;
+        }
+        .footer-credit img {
+            height: 1.25rem;
+            width: auto;
+            object-fit: contain;
+        }    </style>
+</head>
+<body class="bg-parchment-white text-oxford-blue font-body-md overflow-x-hidden">
+<header class="site-header fixed top-0 left-0 w-full z-[70] bg-parchment-white/95 backdrop-blur-md border-b border-oxford-blue/10" id="main-header">
+<div class="max-w-container-max mx-auto h-28 px-4 md:px-10 xl:px-16 flex items-center justify-center xl:justify-between gap-4 relative">
+<a class="flex items-center justify-center gap-3 min-w-0 xl:min-w-[300px]" href="index.html" aria-label="Koyuncu Academy ana sayfa">
+<img alt="Koyuncu Academy logo" class="h-24 w-auto max-w-[260px] xl:max-w-[280px] object-contain" src="assets/logo-header.png" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"/>
+<span class="hidden font-headline-sm text-headline-sm font-bold text-oxford-blue whitespace-nowrap">Koyuncu Academy</span>
+</a>
+<nav class="hidden xl:flex items-center gap-6 2xl:gap-8 font-button text-[15px] 2xl:text-button">
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="index.html">Ana Sayfa</a>
+<div class="relative group">
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors inline-flex items-center gap-1 py-7 whitespace-nowrap" href="hizmetler.html">Hizmetler <span class="material-symbols-outlined text-[18px]">expand_more</span></a>
+<div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-1/2 top-full w-[360px] -translate-x-1/2 pt-3 transition-all duration-200">
+<div class="rounded-lg border border-oxford-blue/10 bg-parchment-white shadow-xl p-2">
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#universite-ders-destegi"><span class="block font-button">Üniversite Ders Desteği</span><span class="block text-sm text-slate-gray mt-1">Fizik, matematik, mühendislik ve teknik proje desteği.</span></a>
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#sinav-hazirligi"><span class="block font-button">Uluslararası Müfredat &amp; Sınav Hazırlığı</span><span class="block text-sm text-slate-gray mt-1">Abitur, A-Level, SAT, IB ve IGCSE hazırlığı.</span></a>
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#almanya-danismanligi"><span class="block font-button">Almanya’da Eğitim &amp; Uyum Danışmanlığı</span><span class="block text-sm text-slate-gray mt-1">Akademik yol haritası ve gerçekçi planlama.</span></a>
+</div>
+</div>
+</div>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="ders-modeli.html">Ders Modeli</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="yazilar.html">Yazılar</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="hakkimda.html">Hakkımda</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="index.html#contact">İletişim</a>
+</nav>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 xl:static xl:translate-y-0 flex items-center gap-4">
+<div class="hidden xl:flex gap-2 font-label-caps text-label-caps text-slate-gray"><span class="text-oxford-blue border-b border-academy-gold">TR</span><span>EN</span><span>DE</span></div>
+<span class="hidden xl:inline-flex material-symbols-outlined text-oxford-blue">language</span>
+<a class="hidden xl:inline-flex bg-[#111820] text-parchment-white px-5 2xl:px-6 py-2 font-button text-button rounded-sm hover:bg-academy-gold hover:text-[#111820] transition-all duration-300 whitespace-nowrap" href="index.html#contact">İlk görüşme</a>
+<button class="mobile-menu-toggle xl:hidden inline-flex h-11 w-11 items-center justify-center border border-oxford-blue/15 text-oxford-blue rounded-sm" aria-controls="mobile-menu" aria-expanded="false" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="mobile-menu hidden xl:hidden border-t border-oxford-blue/10 bg-parchment-white px-4 pb-5">
+<nav class="mx-auto max-w-container-max flex flex-col gap-1 font-button text-button">
+<a class="py-3 border-b border-oxford-blue/10" href="index.html">Ana Sayfa</a>
+<a class="py-3 border-b border-oxford-blue/10" href="hizmetler.html">Hizmetler</a>
+<a class="py-3 pl-4 text-slate-gray" href="hizmetler.html#universite-ders-destegi">Üniversite Ders Desteği</a>
+<a class="py-3 pl-4 text-slate-gray" href="hizmetler.html#sinav-hazirligi">Sınav Hazırlığı</a>
+<a class="py-3 pl-4 text-slate-gray border-b border-oxford-blue/10" href="hizmetler.html#almanya-danismanligi">Almanya Danışmanlığı</a>
+<a class="py-3 border-b border-oxford-blue/10" href="ders-modeli.html">Ders Modeli</a>
+<a class="py-3 border-b border-oxford-blue/10" href="yazilar.html">Yazılar</a>
+<a class="py-3 border-b border-oxford-blue/10" href="hakkimda.html">Hakkımda</a>
+<a class="mt-3 inline-flex justify-center bg-oxford-blue text-parchment-white px-5 py-3 rounded-sm" href="index.html#contact">İlk görüşme</a>
+</nav>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex items-center px-margin-mobile md:px-margin-desktop math-grid hero-gradient overflow-hidden">
+<div class="max-w-[800px] z-10 scroll-reveal">
+<span class="font-label-caps text-label-caps text-academy-gold mb-4 block">EĞİTİM MODELİMİZ</span>
+<h1 class="font-display-lg-mobile md:text-display-lg font-display-lg text-oxford-blue mb-6 leading-tight">
+                    Modern Bir Dijital <br/>
+<span class="text-academy-gold">Öğrenme Deneyimi</span>
+</h1>
+<p class="font-body-lg text-body-lg text-slate-gray mb-10 max-w-[600px]">
+                    Her hedef için aynı ders formatı kullanılmaz. Öğrencinin seviyesi, ders materyali, deadline, sınav türü ve hedefi önce netleştirilir. Sonra ders yapısı buna göre kurulur.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-oxford-blue text-parchment-white px-8 py-4 font-button text-button hover:bg-academy-gold transition-all duration-300 flex items-center gap-2 group">
+                        Programları Keşfedin
+                        <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<button class="border border-oxford-blue text-oxford-blue px-8 py-4 font-button text-button hover:bg-oxford-blue hover:text-parchment-white transition-all duration-300">
+                        Tanışma Toplantısı
+                    </button>
+</div>
+</div>
+<!-- Floating Mathematical Particles -->
+<div class="absolute right-0 top-1/2 -translate-y-1/2 hidden lg:block opacity-80 w-1/2"><div class="animate-float relative z-10">
+<div class="glass-card rounded-lg overflow-hidden border border-academy-gold/20 shadow-xl">
+<img alt="STEM Academy Digital Workspace" class="w-full h-auto object-cover opacity-90" src="https://lh3.googleusercontent.com/aida/AP1WRLvUaSOvNhYrObGP2r3CPooYdMiQFt_4jI_22Pfyu3DqnvvHEkzD7FaJtwp6F79p49J18M3vfrIH0pfMymOVH593oS8P0VdLwymYLaAfn2vIUpU2pCvKijcajhYJ8cx7wjpX8ltJe-P6SFU9MVq_C5iFgvk3HpXZo0_XOkbUXi3m79-uxVWCavD0b6MWppk2QGlmAhYFU4wb7bBC0x_WsRmscIxfotheZj9n90ABi2sQat9MYL_JZMxGFTHl"/>
+</div>
+<div class="absolute -inset-4 bg-academy-gold/5 blur-2xl -z-10 rounded-full"></div>
+</div></div>
+</section>
+<!-- The 4-Step Process -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 scroll-reveal">
+<h2 class="font-headline-md text-headline-md text-oxford-blue mb-4">Akademik Yol Haritası</h2>
+<p class="text-slate-gray max-w-xl mx-auto">Süreçlerimiz, öğrencinin mevcut seviyesini hassasiyetle ölçerek en kısa sürede ustalık seviyesine ulaşmasını sağlar.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter relative mb-16">
+<!-- Step 1 -->
+<div class="relative group scroll-reveal">
+<div class="font-label-caps text-4xl text-academy-gold/20 mb-4">01</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Tanı</h3>
+<p class="text-body-sm text-slate-gray mb-4">Gereksinimlerin ve teknik darboğazların derinlemesine analizi.</p>
+<ul class="text-xs font-label-caps text-academy-gold space-y-2">
+<li>[ ANALİZ SEANSI ]</li>
+<li>[ DARBOĞAZ TESPİTİ ]</li>
+</ul>
+</div>
+<!-- Step 2 -->
+<div class="relative group scroll-reveal" style="transition-delay: 100ms;">
+<div class="font-label-caps text-4xl text-academy-gold/20 mb-4">02</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Kavram</h3>
+<p class="text-body-sm text-slate-gray mb-4">Sınav formatındaki kritik görevlere odaklanmış çalışma.</p>
+<ul class="text-xs font-label-caps text-academy-gold space-y-2">
+<li>[ FORMAT ANALİZİ ]</li>
+<li>[ KRİTİK SORULAR ]</li>
+</ul>
+</div>
+<!-- Step 3 -->
+<div class="relative group scroll-reveal" style="transition-delay: 200ms;">
+<div class="font-label-caps text-4xl text-academy-gold/20 mb-4">03</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Uygulama</h3>
+<p class="text-body-sm text-slate-gray mb-4">Uygulanabilir notlar ve kişiselleştirilmiş çalışma yolları.</p>
+<ul class="text-xs font-label-caps text-academy-gold space-y-2">
+<li>[ İLERLEME RAPORU ]</li>
+<li>[ ÖDEV YÖNETİMİ ]</li>
+</ul>
+</div>
+<!-- Step 4 -->
+<div class="relative group scroll-reveal" style="transition-delay: 300ms;">
+<div class="font-label-caps text-4xl text-academy-gold/20 mb-4">04</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Takip</h3>
+<p class="text-body-sm text-slate-gray mb-4">Bağımsız problem çözme ve teknik iş akışı becerisi.</p>
+<ul class="text-xs font-label-caps text-academy-gold space-y-2">
+<li>[ TAM BAĞIMSIZLIK ]</li>
+<li>[ İLERİ SEVİYE ]</li>
+</ul>
+</div>
+</div>
+<div class="glass-card p-8 rounded-lg border-l-4 border-l-academy-gold scroll-reveal max-w-4xl mx-auto">
+<div class="flex gap-4 items-start">
+<span class="material-symbols-outlined text-academy-gold mt-1">priority_high</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm mb-2 text-oxford-blue">Sınav Önceliği</h4>
+<p class="text-slate-gray font-body-md">Sınav yaklaşıyorsa önce öncelik belirlenir. Hangi konunun yüksek etki yaratacağı, hangi soru tipinin tekrarlandığı ve hangi eksik temelin önce kapatılması gerektiği birlikte belirlenir.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lesson Formats -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-parchment-white">
+<div class="max-w-container-max mx-auto">
+<div class="flex justify-between items-end mb-16 scroll-reveal">
+<div>
+<span class="font-label-caps text-label-caps text-academy-gold mb-2 block">FORMATLAR</span>
+<h2 class="font-headline-md text-headline-md text-oxford-blue">Ders Modülleri</h2>
+</div>
+<div class="hidden md:block">
+<p class="text-slate-gray max-w-sm text-right">İhtiyacınıza uygun esnek ve sonuç odaklı akademik destek paketleri.</p>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Format Card 1 -->
+<div class="glass-card p-8 group hover:translate-y-[-8px] transition-all duration-300 scroll-reveal">
+<div class="w-12 h-12 bg-oxford-blue text-academy-gold flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">radar</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Teşhis Seansı</h4>
+<p class="text-body-sm text-slate-gray mb-6">90 dakikalık yoğun analiz seansı ile tüm akademik eksikleri haritalandırıyoruz.</p>
+<button class="text-oxford-blue font-label-caps text-xs flex items-center gap-2 group-hover:text-academy-gold transition-colors">
+                            DETAYLAR <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<!-- Format Card 2 -->
+<div class="glass-card p-8 group hover:translate-y-[-8px] transition-all duration-300 scroll-reveal" style="transition-delay: 100ms;">
+<div class="w-12 h-12 bg-oxford-blue text-academy-gold flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">pause</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Düzenli Dersler</h4>
+<p class="text-body-sm text-slate-gray mb-6">Haftalık periyotlarla müfredat takibi ve sürekli gelişim odağı.</p>
+<button class="text-oxford-blue font-label-caps text-xs flex items-center gap-2 group-hover:text-academy-gold transition-colors">
+                            DETAYLAR <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<!-- Format Card 3 -->
+<div class="glass-card p-8 group hover:translate-y-[-8px] transition-all duration-300 scroll-reveal" style="transition-delay: 200ms;">
+<div class="w-12 h-12 bg-oxford-blue text-academy-gold flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">target</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Sınav Kampı</h4>
+<p class="text-body-sm text-slate-gray mb-6">Final ve giriş sınavları öncesi hızlandırılmış, yüksek etkili soru çözüm seansları.</p>
+<button class="text-oxford-blue font-label-caps text-xs flex items-center gap-2 group-hover:text-academy-gold transition-colors">
+                            DETAYLAR <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+<!-- Format Card 4 -->
+<div class="glass-card p-8 group hover:translate-y-[-8px] transition-all duration-300 scroll-reveal" style="transition-delay: 300ms;">
+<div class="w-12 h-12 bg-oxford-blue text-academy-gold flex items-center justify-center mb-6">
+<span class="material-symbols-outlined">description</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm mb-4">Proje Desteği</h4>
+<p class="text-body-sm text-slate-gray mb-6">Mühendislik ve sosyal bilimler projeleri için teknik raporlama ve akademik rehberlik.</p>
+<button class="text-oxford-blue font-label-caps text-xs flex items-center gap-2 group-hover:text-academy-gold transition-colors">
+                            DETAYLAR <span class="material-symbols-outlined text-sm">north_east</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Lab Environment -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-oxford-blue text-parchment-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 math-grid"></div>
+<div class="max-w-container-max mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10 relative">
+<div class="scroll-reveal">
+<span class="font-label-caps text-label-caps text-academy-gold mb-4 block">ARAÇLAR &amp; TEKNOLOJİ</span>
+<h2 class="font-headline-md text-headline-md mb-6 leading-tight">Dijital Laboratuvar <br/>Ekosistemimiz</h2>
+<p class="text-surface-dim/70 mb-8 font-body-lg">Derslerimizi salt video görüşmesinden çıkarıp, etkileşimli bir teknik seansa dönüştürüyoruz. Matematiksel kesinlik, yazılım entegrasyonu ile buluşuyor.</p>
+<div class="space-y-6">
+<div class="flex items-start gap-4">
+<div class="mt-1 text-academy-gold"><span class="material-symbols-outlined">code</span></div>
+<div>
+<h5 class="font-bold text-lg mb-1">LaTeX &amp; Teknik Raporlama</h5>
+<p class="text-sm text-surface-dim/60">Karmaşık formüller ve akademik ödevler için profesyonel typesetting standartları.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 text-academy-gold"><span class="material-symbols-outlined">terminal</span></div>
+<div>
+<h5 class="font-bold text-lg mb-1">Python &amp; Matematiksel Modelleme</h5>
+<p class="text-sm text-surface-dim/60">Teorik kavramları kodlama ve simülasyonlarla somutlaştırma süreci.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<div class="mt-1 text-academy-gold"><span class="material-symbols-outlined">draw</span></div>
+<div>
+<h5 class="font-bold text-lg mb-1">Interaktif Beyaz Tahta</h5>
+<p class="text-sm text-surface-dim/60">Eşzamanlı çizim ve problem çözme araçlarıyla kesintisiz iletişim.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative scroll-reveal">
+<div class="aspect-video bg-surface-container-highest/10 rounded-lg border border-academy-gold/20 overflow-hidden glass-card">
+<img alt="Digital learning dashboard" class="w-full h-full object-cover opacity-60 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A high-end digital learning interface displayed on a sleek laptop screen. The screen shows complex mathematical formulas and interactive whiteboard elements in a dark mode UI. The surrounding environment is a minimalist, modern office with soft architectural lighting, echoing the Oxford Blue and Academy Gold brand colors. The mood is highly professional, focused, and technologically advanced." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAObqppCc8usP1pNpqk2TjZs9Hsoko9YRzNjFxJKN-UasF6YyOvmnTJjOKELEtRFMNq5ENzyvPrUnxHWxWrvM5kQFzFIHgyTuQUbcG2n_jllzTpv2lhPGPnyHMH6jyS5lSkZr4wEaAPANFv7tF7Swc6VRlIJOqLaT1MbxeK3eQTzUFBZ1B6UIAie0E7S61_ZXqEJxiRLGTmBeK2gAMn89bJsGtmsbgXWoQC2ettGS6Ruey5E-Km1Z7Ul8fc1vsEZi9nnlxc4jefh_F8"/>
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-16 h-16 bg-academy-gold rounded-full flex items-center justify-center animate-pulse cursor-pointer">
+<span class="material-symbols-outlined text-oxford-blue text-4xl">play_arrow</span>
+</div>
+</div>
+</div>
+<!-- UI Elements Floating -->
+<div class="absolute -bottom-6 -left-6 bg-academy-gold text-oxford-blue p-4 font-label-caps text-[10px] shadow-xl hidden md:block">
+                        LIVE_LATEX_SYNC_ENABLED: TRUE
+                    </div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-24 px-margin-mobile md:px-margin-desktop bg-surface text-center">
+<div class="max-w-3xl mx-auto scroll-reveal">
+<h2 class="font-display-lg-mobile md:text-headline-md font-headline-md text-oxford-blue mb-6">Hedeflerinize Doğru İlk Adımı Atın</h2>
+<p class="text-slate-gray mb-10 font-body-lg">Akademik geçmişinizi ve hedeflerinizi bize iletin, size özel çalışma planını birlikte oluşturalım.</p>
+<div class="bg-white p-8 border border-oxford-blue/10 shadow-sm max-w-xl mx-auto">
+<form class="space-y-6 text-left">
+<div class="relative">
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-academy-gold focus:ring-0 px-4 py-3 outline-none transition-all placeholder:text-slate-gray/50" placeholder="Adınız Soyadınız" type="text"/>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-academy-gold focus:ring-0 px-4 py-3 outline-none transition-all placeholder:text-slate-gray/50" placeholder="E-posta Adresiniz" type="email"/>
+</div>
+<div class="relative">
+<textarea class="w-full bg-surface-container-low border-b-2 border-transparent focus:border-academy-gold focus:ring-0 px-4 py-3 outline-none transition-all placeholder:text-slate-gray/50" placeholder="Hangi konularda destek almak istiyorsunuz?" rows="4"></textarea>
+</div>
+<button class="w-full bg-oxford-blue text-parchment-white py-4 font-button text-button hover:bg-academy-gold transition-all duration-300">İletişime Geçin</button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-4 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-gutter bg-oxford-blue text-parchment-white border-t border-academy-gold/20 relative z-10">
+<div class="flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm text-academy-gold">Koyuncu Academy</div>
+<p class="font-body-sm text-body-sm text-surface-dim/70">Üniversite ders desteği, uluslararası sınav hazırlığı ve Almanya eğitim danışmanlığı.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">PROGRAMS</h5>
+<nav class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">Hizmetler</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">Almanyada Eğitim</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">STEM Özel Ders</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">QUICK LINKS</h5>
+<nav class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="ders-modeli.html">Ders Modeli</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="#">Gizlilik</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="#">Impressum</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">CONTACT (TR|EN|DE)</h5>
+<p class="font-body-sm text-body-sm text-surface-dim/70 italic">Consultations available in three languages.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-academy-gold transition-colors" data-icon="mail">mail</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-academy-gold transition-colors" data-icon="phone">phone</span>
+</div>
+</div>
+<div class="md:col-span-4 border-t border-parchment-white/5 pt-8 mt-8 flex flex-col md:flex-row justify-between font-body-sm text-body-sm text-surface-dim/50">
+<p class="">© 2026 Koyuncu Academy. Akademik destek ve eğitim danışmanlığı.</p>
+<a class="footer-credit" href="https://www.machmal38.de" target="_blank" rel="noopener">
+        <img src="assets/machmal-logo.png" alt="Machmal Internetdienste Webdesign" onerror="this.remove()">
+        <span>Webdesign &amp; Entwicklung: Machmal Internetdienste</span>
+      </a>
+</div>
+</footer>
+<script>
+        // Scroll Reveal Interaction
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
+        // Background Particles Parallax Effect
+        window.addEventListener('mousemove', (e) => {
+            const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
+            const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+            
+            document.querySelectorAll('.animate-float').forEach(el => {
+                el.style.transform = `translate(${moveX}px, ${moveY}px)`;
+            });
+        });
+    </script>
+<script>
+(function () {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    const icon = toggle.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = isOpen ? 'menu' : 'close';
+  });
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      const icon = toggle.querySelector('.material-symbols-outlined');
+      if (icon) icon.textContent = 'menu';
+    });
+  });
+})();
+</script></body></html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,561 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hizmetler | Koyuncu Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "parchment-white": "#FDFBF3",
+                        "on-tertiary-fixed-variant": "#474742",
+                        "surface-container-high": "#e9e8e7",
+                        "tertiary-fixed": "#e4e3db",
+                        "secondary": "#735c00",
+                        "on-tertiary": "#ffffff",
+                        "surface-container": "#efeded",
+                        "secondary-fixed": "#ffe088",
+                        "inverse-primary": "#b3c9dd",
+                        "primary-container": "#0e2433",
+                        "primary-fixed-dim": "#b3c9dd",
+                        "tertiary-container": "#22221d",
+                        "error": "#ba1a1a",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed-variant": "#344959",
+                        "on-secondary-fixed": "#241a00",
+                        "oxford-blue": "#0E2433",
+                        "outline": "#73777c",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed-dim": "#e9c349",
+                        "on-error": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "surface-tint": "#4c6172",
+                        "tertiary-fixed-dim": "#c8c7bf",
+                        "surface-bright": "#fbf9f8",
+                        "success-green": "#2D6A4F",
+                        "inverse-on-surface": "#f2f0f0",
+                        "surface-container-low": "#f5f3f3",
+                        "secondary-container": "#fed65b",
+                        "on-secondary-container": "#745c00",
+                        "on-surface": "#1b1c1c",
+                        "background": "#fbf9f8",
+                        "surface-variant": "#e4e2e2",
+                        "surface-dim": "#dbdad9",
+                        "primary-fixed": "#cfe5fa",
+                        "on-secondary-fixed-variant": "#574500",
+                        "on-tertiary-fixed": "#1b1c17",
+                        "on-background": "#1b1c1c",
+                        "tertiary": "#0b0c08",
+                        "on-tertiary-container": "#8a8983",
+                        "on-surface-variant": "#43474c",
+                        "outline-variant": "#c3c7cc",
+                        "on-primary-container": "#778c9e",
+                        "on-secondary": "#ffffff",
+                        "error-red": "#BC4749",
+                        "primary": "#000d18",
+                        "on-primary-fixed": "#061d2c",
+                        "academy-gold": "#D4AF37",
+                        "inverse-surface": "#303031",
+                        "surface-container-highest": "#e4e2e2",
+                        "on-error-container": "#93000a",
+                        "surface": "#fbf9f8",
+                        "slate-gray": "#666666"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "unit": "8px",
+                        "gutter": "24px",
+                        "margin-desktop": "64px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-md": ["Inter"],
+                        "headline-sm": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "display-lg-mobile": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "label-caps": ["JetBrains Mono"],
+                        "button": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                        "button": ["16px", {"lineHeight": "20px", "fontWeight": "600"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .canvas-bg {
+            background-image: radial-gradient(#0E243315 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(14, 36, 51, 0.1);
+        }
+        .motion-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    
+        html { scroll-padding-top: 9rem; }
+        [id] { scroll-margin-top: 9rem; }
+            .footer-credit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            color: rgba(242, 240, 240, 0.62);
+            font-size: 0.75rem;
+            line-height: 1rem;
+            transition: color 0.2s ease;
+        }
+        .footer-credit:hover {
+            color: #D4AF37;
+        }
+        .footer-credit img {
+            height: 1.25rem;
+            width: auto;
+            object-fit: contain;
+        }    </style>
+</head>
+<body class="bg-parchment-white text-oxford-blue selection:bg-academy-gold/30">
+<canvas class="fixed inset-0 pointer-events-none z-0" id="particleCanvas"></canvas>
+<header class="site-header fixed top-0 left-0 w-full z-[70] bg-parchment-white/95 backdrop-blur-md border-b border-oxford-blue/10" id="main-header">
+<div class="max-w-container-max mx-auto h-28 px-4 md:px-10 xl:px-16 flex items-center justify-center xl:justify-between gap-4 relative">
+<a class="flex items-center justify-center gap-3 min-w-0 xl:min-w-[300px]" href="index.html" aria-label="Koyuncu Academy ana sayfa">
+<img alt="Koyuncu Academy logo" class="h-24 w-auto max-w-[260px] xl:max-w-[280px] object-contain" src="assets/logo-header.png" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"/>
+<span class="hidden font-headline-sm text-headline-sm font-bold text-oxford-blue whitespace-nowrap">Koyuncu Academy</span>
+</a>
+<nav class="hidden xl:flex items-center gap-6 2xl:gap-8 font-button text-[15px] 2xl:text-button">
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="index.html">Ana Sayfa</a>
+<div class="relative group">
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors inline-flex items-center gap-1 py-7 whitespace-nowrap" href="hizmetler.html">Hizmetler <span class="material-symbols-outlined text-[18px]">expand_more</span></a>
+<div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-1/2 top-full w-[360px] -translate-x-1/2 pt-3 transition-all duration-200">
+<div class="rounded-lg border border-oxford-blue/10 bg-parchment-white shadow-xl p-2">
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#universite-ders-destegi"><span class="block font-button">Üniversite Ders Desteği</span><span class="block text-sm text-slate-gray mt-1">Fizik, matematik, mühendislik ve teknik proje desteği.</span></a>
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#sinav-hazirligi"><span class="block font-button">Uluslararası Müfredat &amp; Sınav Hazırlığı</span><span class="block text-sm text-slate-gray mt-1">Abitur, A-Level, SAT, IB ve IGCSE hazırlığı.</span></a>
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#almanya-danismanligi"><span class="block font-button">Almanya’da Eğitim &amp; Uyum Danışmanlığı</span><span class="block text-sm text-slate-gray mt-1">Akademik yol haritası ve gerçekçi planlama.</span></a>
+</div>
+</div>
+</div>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="ders-modeli.html">Ders Modeli</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="yazilar.html">Yazılar</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="hakkimda.html">Hakkımda</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="index.html#contact">İletişim</a>
+</nav>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 xl:static xl:translate-y-0 flex items-center gap-4">
+<div class="hidden xl:flex gap-2 font-label-caps text-label-caps text-slate-gray"><span class="text-oxford-blue border-b border-academy-gold">TR</span><span>EN</span><span>DE</span></div>
+<span class="hidden xl:inline-flex material-symbols-outlined text-oxford-blue">language</span>
+<a class="hidden xl:inline-flex bg-[#111820] text-parchment-white px-5 2xl:px-6 py-2 font-button text-button rounded-sm hover:bg-academy-gold hover:text-[#111820] transition-all duration-300 whitespace-nowrap" href="index.html#contact">İlk görüşme</a>
+<button class="mobile-menu-toggle xl:hidden inline-flex h-11 w-11 items-center justify-center border border-oxford-blue/15 text-oxford-blue rounded-sm" aria-controls="mobile-menu" aria-expanded="false" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="mobile-menu hidden xl:hidden border-t border-oxford-blue/10 bg-parchment-white px-4 pb-5">
+<nav class="mx-auto max-w-container-max flex flex-col gap-1 font-button text-button">
+<a class="py-3 border-b border-oxford-blue/10" href="index.html">Ana Sayfa</a>
+<a class="py-3 border-b border-oxford-blue/10" href="hizmetler.html">Hizmetler</a>
+<a class="py-3 pl-4 text-slate-gray" href="hizmetler.html#universite-ders-destegi">Üniversite Ders Desteği</a>
+<a class="py-3 pl-4 text-slate-gray" href="hizmetler.html#sinav-hazirligi">Sınav Hazırlığı</a>
+<a class="py-3 pl-4 text-slate-gray border-b border-oxford-blue/10" href="hizmetler.html#almanya-danismanligi">Almanya Danışmanlığı</a>
+<a class="py-3 border-b border-oxford-blue/10" href="ders-modeli.html">Ders Modeli</a>
+<a class="py-3 border-b border-oxford-blue/10" href="yazilar.html">Yazılar</a>
+<a class="py-3 border-b border-oxford-blue/10" href="hakkimda.html">Hakkımda</a>
+<a class="mt-3 inline-flex justify-center bg-oxford-blue text-parchment-white px-5 py-3 rounded-sm" href="index.html#contact">İlk görüşme</a>
+</nav>
+</div>
+</header>
+<main class="relative z-10 pt-36">
+<section class="px-margin-mobile md:px-margin-desktop mb-24">
+<div class="max-w-container-max mx-auto grid md:grid-cols-2 gap-12 items-center">
+<div class="reveal-on-scroll">
+<span class="font-label-caps text-label-caps text-academy-gold mb-4 block">[ PREMIUM STEM TUTORING ]</span>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-oxford-blue mb-6">
+                        Uzmanlık Alanları &amp; <br/><span class="text-academy-gold">Özel Dersler</span>
+</h1>
+<p class="font-body-lg text-body-lg text-slate-gray mb-8 max-w-lg">
+                        Üniversite dersleri, uluslararası sınavlar (Abitur, A-Level, IB) ve teknik beceriler için özelleştirilmiş STEM desteği. Akademik başarınızı garanti altına alan butik yaklaşım.
+                    </p>
+<div class="flex flex-wrap gap-4">
+<button class="bg-oxford-blue text-parchment-white px-8 py-4 rounded-lg font-button text-button flex items-center gap-2 group hover:shadow-lg transition-all active:scale-95">
+                            İlk Analiz Seansını Başlat
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+</div>
+<div class="relative reveal-on-scroll delay-100">
+<div class="relative rounded-xl overflow-hidden shadow-2xl border border-oxford-blue/10">
+<img class="w-full aspect-square md:aspect-video object-cover" data-alt="A high-resolution photograph of a professional workspace featuring a high-end laptop displaying complex mathematical and physics equations. Floating glass panes above the screen show glowing diagrams and circuit designs. The background is a sophisticated deep navy blue with subtle atmospheric lighting, creating a premium academic and technological aesthetic consistent with elite educational consultancy." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlgjgEIQthIF41HS7-C735miGbHriXC64Tk4MdujzEV58ytbyAVTrLMPtbRPFSGFWWGDRxemo2z1XAklaPa1VMPOr5ij0cnB4CDb0zHtzlkFj1yq9fdOrUHxakXBzEgc6MNGD_8kWNiXOFuEScYYAXKtgkeEu7pHtF3DjnLz3DVtlcjoKnAk29Q3w9cKXz3JsMntG67uHd-Kj7_DjVdfhG7pi4_v3IkQuPXyB9b5N1xtPAiPGsLmq3LDA6bUurpdCRurdNc1sdPoL7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-oxford-blue/40 to-transparent"></div>
+</div>
+<!-- Floating Math Symbols -->
+<div class="absolute -top-6 -right-6 glass-card p-4 rounded-lg motion-float hidden md:block">
+<span class="font-label-caps text-oxford-blue text-lg">∫ f(x) dx = F(x) + C</span>
+</div>
+<div class="absolute -bottom-4 -left-6 glass-card p-4 rounded-lg motion-float [animation-delay:2s] hidden md:block">
+<span class="font-label-caps text-academy-gold text-lg">E = mc²</span>
+</div>
+</div>
+</div>
+</section>
+<section class="px-margin-mobile md:px-margin-desktop py-24 bg-oxford-blue text-parchment-white relative overflow-hidden scroll-mt-36" id="universite-ders-destegi">
+<div class="absolute inset-0 opacity-10 canvas-bg"></div>
+<div class="max-w-container-max mx-auto relative z-10">
+<div class="mb-16 reveal-on-scroll">
+<h2 class="font-headline-md text-headline-md mb-4">Akademik Destek &amp; Danışmanlık Hizmetleri</h2>
+<div class="h-1 w-20 bg-academy-gold"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- STEM Özel Ders -->
+<div class="reveal-on-scroll bg-white/5 border border-white/10 p-8 rounded-lg hover:border-academy-gold/50 transition-colors group">
+<span class="material-symbols-outlined text-academy-gold text-4xl mb-6">science</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">STEM Özel Ders</h3>
+<p class="font-body-md text-slate-gray">
+                            Üniversite fiziği, ileri matematik, kimya temelleri, malzeme bilimi, istatistik ve veri analizi; tanımlar ve temsilî sorular üzerinden çalışılır.
+                        </p>
+</div>
+<!-- Engineering & IT -->
+<div class="reveal-on-scroll delay-100 bg-white/5 border border-white/10 p-8 rounded-lg hover:border-academy-gold/50 transition-colors">
+<span class="material-symbols-outlined text-academy-gold text-4xl mb-6">engineering</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Engineering &amp; IT</h3>
+<p class="font-body-md text-slate-gray">
+                            Elektroteknik, devreler, Python, Jupyter, LaTeX, Beamer, hata ayıklama, raporlar, grafikler ve hesaplamalı notebook çalışmaları.
+                        </p>
+</div>
+<!-- Business & Projeler -->
+<div class="reveal-on-scroll delay-200 bg-white/5 border border-white/10 p-8 rounded-lg hover:border-academy-gold/50 transition-colors">
+<span class="material-symbols-outlined text-academy-gold text-4xl mb-6">business_center</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Business &amp; Projeler</h3>
+<p class="font-body-md text-slate-gray">
+                            Business case, German taxation konuları, proje planlama, sunumlar, Excel/veri analizi ve akademik rapor yapısı.
+                        </p>
+</div>
+<!-- Sınav Hazırlığı -->
+<div class="reveal-on-scroll delay-300 bg-white/5 border border-white/10 p-8 rounded-lg hover:border-academy-gold/50 transition-colors scroll-mt-36" id="sinav-hazirligi">
+<span class="material-symbols-outlined text-academy-gold text-4xl mb-6">school</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Sınav Hazırlığı</h3>
+<p class="font-body-md text-slate-gray">
+                            Abitur, A-Level, SAT, IB, IGCSE ve okuldan üniversiteye geçiş sürecinde matematik, fizik ve teknik dersler için çalışma planı.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<section class="px-margin-mobile md:px-margin-desktop py-24 bg-parchment-white scroll-mt-36" id="almanya-danismanligi">
+<div class="max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal-on-scroll">
+<div>
+<span class="font-label-caps text-label-caps text-academy-gold mb-4 block">EĞİTİM DANIŞMANLIĞI</span>
+<h2 class="font-headline-md text-headline-md text-oxford-blue">Almanya Eğitim Süreci</h2>
+</div>
+<p class="font-body-md text-slate-gray max-w-sm mt-4 md:mt-0">
+                        Almanya'da akademik başarı için kapsamlı danışmanlık ve stratejik planlama.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<div class="reveal-on-scroll glass-card p-6 border-b-2 border-b-academy-gold flex items-start gap-4">
+<span class="material-symbols-outlined text-academy-gold mt-1">public</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Almanya Eğitim Sistemi</h3>
+<p class="font-body-sm text-slate-gray">Alman akademik yapısının ve üniversite sisteminin temellerini anlama.</p>
+</div>
+</div>
+<div class="reveal-on-scroll delay-100 glass-card p-6 border-b-2 border-b-academy-gold flex items-start gap-4">
+<span class="material-symbols-outlined text-academy-gold mt-1">account_tree</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Bölüm ve Program Seçimi</h3>
+<p class="font-body-sm text-slate-gray">Kariyer hedeflerinize ve yeteneklerinize uygun en doğru bölümü bulma.</p>
+</div>
+</div>
+<div class="reveal-on-scroll delay-200 glass-card p-6 border-b-2 border-b-academy-gold flex items-start gap-4">
+<span class="material-symbols-outlined text-academy-gold mt-1">biotech</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">STEM Hazırlığı</h3>
+<p class="font-body-sm text-slate-gray">Mühendislik ve temel bilimler programları için gerekli altyapının kurulması.</p>
+</div>
+</div>
+<div class="reveal-on-scroll delay-300 glass-card p-6 border-b-2 border-b-academy-gold flex items-start gap-4">
+<span class="material-symbols-outlined text-academy-gold mt-1">person_search</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Profil Desteği</h3>
+<p class="font-body-sm text-slate-gray">Kabul şansını artıracak akademik ve müfredat dışı profilin inşası.</p>
+</div>
+</div>
+<div class="reveal-on-scroll delay-400 glass-card p-6 border-b-2 border-b-academy-gold flex items-start gap-4">
+<span class="material-symbols-outlined text-academy-gold mt-1">assignment_turned_in</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Başvuru Sürecini Anlamak</h3>
+<p class="font-body-sm text-slate-gray">Uni-assist, doğrudan başvuru ve bürokratik adımların netleştirilmesi.</p>
+</div>
+</div>
+<div class="reveal-on-scroll delay-500 glass-card p-6 border-b-2 border-b-academy-gold flex items-start gap-4">
+<span class="material-symbols-outlined text-academy-gold mt-1">family_restroom</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Aileler İçin Açıklık</h3>
+<p class="font-body-sm text-slate-gray">Süreç boyunca ebeveynler için şeffaf iletişim ve bütçe/yaşam rehberliği.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Kimler İçin Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-24 bg-oxford-blue/5">
+<div class="max-w-container-max mx-auto">
+<div class="mb-16 reveal-on-scroll text-center">
+<h2 class="font-headline-md text-headline-md text-oxford-blue mb-4">Kimler İçin?</h2>
+<p class="font-body-lg text-slate-gray max-w-2xl mx-auto">Hedef kitlesi odaklı, kişiselleştirilmiş danışmanlık yaklaşımımız.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white rounded-lg p-8 shadow-sm border border-oxford-blue/5 reveal-on-scroll flex gap-6 items-center">
+<div class="bg-academy-gold/20 p-4 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-academy-gold text-3xl">groups</span>
+</div>
+<p class="font-body-md text-oxford-blue font-medium">Türkiye merkezli lise öğrencileri ve aileleri</p>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-sm border border-oxford-blue/5 reveal-on-scroll delay-100 flex gap-6 items-center">
+<div class="bg-academy-gold/20 p-4 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-academy-gold text-3xl">flight_takeoff</span>
+</div>
+<p class="font-body-md text-oxford-blue font-medium">Almanya'da lisans/yüksek lisans hedefleyenler</p>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-sm border border-oxford-blue/5 reveal-on-scroll delay-200 flex gap-6 items-center">
+<div class="bg-academy-gold/20 p-4 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-academy-gold text-3xl">menu_book</span>
+</div>
+<p class="font-body-md text-oxford-blue font-medium">Studienkolleg/dil hazırlığı/STEM temellerini araştıranlar</p>
+</div>
+<div class="bg-white rounded-lg p-8 shadow-sm border border-oxford-blue/5 reveal-on-scroll delay-300 flex gap-6 items-center">
+<div class="bg-academy-gold/20 p-4 rounded-full flex-shrink-0">
+<span class="material-symbols-outlined text-academy-gold text-3xl">description</span>
+</div>
+<p class="font-body-md text-oxford-blue font-medium">CV/motivasyon mektubu/akademik profil hazırlayanlar</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-24">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16 reveal-on-scroll">
+<h2 class="font-headline-md text-headline-md text-oxford-blue mb-4">Paket Yapısı</h2>
+<p class="font-body-lg text-slate-gray max-w-2xl mx-auto">Hedeflerinize en uygun çalışma modelini seçin.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Diagnostic -->
+<div class="reveal-on-scroll border border-oxford-blue/10 p-10 rounded-lg flex flex-col hover:shadow-xl transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-2">Teşhis (Diagnostic)</h3>
+<p class="font-body-sm text-slate-gray mb-8">Eksiklerin belirlenmesi ve yol haritası çıkarılması için tek seanslık analiz.</p>
+<div class="mt-auto">
+<button class="w-full border border-oxford-blue text-oxford-blue py-3 rounded font-button hover:bg-oxford-blue hover:text-white transition-colors">Bilgi Al</button>
+</div>
+</div>
+<!-- Regular -->
+<div class="reveal-on-scroll delay-100 border-2 border-academy-gold p-10 rounded-lg flex flex-col relative scale-105 bg-white shadow-2xl">
+<div class="absolute top-0 right-10 bg-academy-gold text-oxford-blue px-4 py-1 font-label-caps text-[10px] rounded-b">MOST POPULAR</div>
+<h3 class="font-headline-sm text-headline-sm mb-2">Düzenli (Regular)</h3>
+<p class="font-body-sm text-slate-gray mb-8">Haftalık periyotta takip ve ödev desteği içeren uzun dönemli çalışma.</p>
+<div class="mt-auto">
+<button class="w-full bg-oxford-blue text-parchment-white py-4 rounded font-button hover:bg-academy-gold transition-colors">Seç ve Başla</button>
+</div>
+</div>
+<!-- Intensive -->
+<div class="reveal-on-scroll delay-200 border border-oxford-blue/10 p-10 rounded-lg flex flex-col hover:shadow-xl transition-all">
+<h3 class="font-headline-sm text-headline-sm mb-2">Yoğun (Intensive)</h3>
+<p class="font-body-sm text-slate-gray mb-8">Sınav öncesi son hazırlık kampları ve 7/24 soru sorma desteği.</p>
+<div class="mt-auto">
+<button class="w-full border border-oxford-blue text-oxford-blue py-3 rounded font-button hover:bg-oxford-blue hover:text-white transition-colors">Bilgi Al</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-margin-mobile md:px-margin-desktop py-24 text-center reveal-on-scroll">
+<div class="max-w-3xl mx-auto bg-oxford-blue p-16 rounded-2xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 canvas-bg"></div>
+<h2 class="font-display-lg-mobile text-display-lg-mobile text-parchment-white mb-6">Geleceğinizi STEM ile Şekillendirin</h2>
+<p class="font-body-lg text-slate-gray mb-10">Koyuncu Academy mentorluğu ile akademik engelleri fırsata dönüştürün.</p>
+<button class="bg-academy-gold text-oxford-blue px-10 py-5 rounded-lg font-button text-lg hover:bg-white transition-all hover:scale-105">
+                    İlk Analiz Seansını Başlat
+                </button>
+</div>
+</section>
+</main>
+<footer class="w-full py-16 px-4 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-gutter bg-oxford-blue text-parchment-white border-t border-academy-gold/20 relative z-10">
+<div class="flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm text-academy-gold">Koyuncu Academy</div>
+<p class="font-body-sm text-body-sm text-surface-dim/70">Üniversite ders desteği, uluslararası sınav hazırlığı ve Almanya eğitim danışmanlığı.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">PROGRAMS</h5>
+<nav class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">Hizmetler</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">Almanyada Eğitim</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">STEM Özel Ders</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">QUICK LINKS</h5>
+<nav class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="ders-modeli.html">Ders Modeli</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="#">Gizlilik</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="#">Impressum</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">CONTACT (TR|EN|DE)</h5>
+<p class="font-body-sm text-body-sm text-surface-dim/70 italic">Consultations available in three languages.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-academy-gold transition-colors" data-icon="mail">mail</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-academy-gold transition-colors" data-icon="phone">phone</span>
+</div>
+</div>
+<div class="md:col-span-4 border-t border-parchment-white/5 pt-8 mt-8 flex flex-col md:flex-row justify-between font-body-sm text-body-sm text-surface-dim/50">
+<p class="">© 2026 Koyuncu Academy. Akademik destek ve eğitim danışmanlığı.</p>
+<a class="footer-credit" href="https://www.machmal38.de" target="_blank" rel="noopener">
+        <img src="assets/machmal-logo.png" alt="Machmal Internetdienste Webdesign" onerror="this.remove()">
+        <span>Webdesign &amp; Entwicklung: Machmal Internetdienste</span>
+      </a>
+</div>
+</footer>
+<script>
+        // Particle Animation Logic
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        window.addEventListener('resize', resize);
+        resize();
+
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+            reset() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2;
+                this.alpha = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+            }
+            draw() {
+                ctx.fillStyle = `rgba(212, 175, 55, ${this.alpha})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 50; i++) {
+            particles.push(new Particle());
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Scroll Reveal Logic
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+    </script>
+<script>
+(function () {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    const icon = toggle.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = isOpen ? 'menu' : 'close';
+  });
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      const icon = toggle.querySelector('.material-symbols-outlined');
+      if (icon) icon.textContent = 'menu';
+    });
+  });
+})();
+</script></body></html>
+
+
+
+
+
+
+
+

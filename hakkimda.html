@@ -1,0 +1,444 @@
+﻿<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="tr"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hakkımızda | Koyuncu Academy</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700;800&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-variant": "#e4e2e2",
+                      "success-green": "#2D6A4F",
+                      "outline-variant": "#c3c7cc",
+                      "academy-gold": "#D4AF37",
+                      "on-secondary-container": "#745c00",
+                      "tertiary-container": "#22221d",
+                      "on-secondary": "#ffffff",
+                      "secondary-fixed-dim": "#e9c349",
+                      "surface-container": "#efeded",
+                      "on-tertiary": "#ffffff",
+                      "on-primary-fixed-variant": "#344959",
+                      "secondary-fixed": "#ffe088",
+                      "slate-gray": "#666666",
+                      "secondary-container": "#fed65b",
+                      "surface-tint": "#4c6172",
+                      "on-secondary-fixed-variant": "#574500",
+                      "on-error": "#ffffff",
+                      "parchment-white": "#FDFBF3",
+                      "on-background": "#1b1c1c",
+                      "primary-fixed-dim": "#b3c9dd",
+                      "secondary": "#735c00",
+                      "background": "#fbf9f8",
+                      "inverse-on-surface": "#f2f0f0",
+                      "outline": "#73777c",
+                      "surface-bright": "#fbf9f8",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-container": "#0e2433",
+                      "inverse-surface": "#303031",
+                      "error-red": "#BC4749",
+                      "surface-dim": "#dbdad9",
+                      "on-tertiary-fixed": "#1b1c17",
+                      "surface-container-low": "#f5f3f3",
+                      "on-surface-variant": "#43474c",
+                      "surface-container-highest": "#e4e2e2",
+                      "error-container": "#ffdad6",
+                      "surface-container-high": "#e9e8e7",
+                      "on-secondary-fixed": "#241a00",
+                      "on-primary-fixed": "#061d2c",
+                      "inverse-primary": "#b3c9dd",
+                      "on-surface": "#1b1c1c",
+                      "primary-fixed": "#cfe5fa",
+                      "on-tertiary-container": "#8a8983",
+                      "tertiary-fixed-dim": "#c8c7bf",
+                      "primary": "#000d18",
+                      "on-primary": "#ffffff",
+                      "tertiary-fixed": "#e4e3db",
+                      "on-error-container": "#93000a",
+                      "surface": "#fbf9f8",
+                      "on-tertiary-fixed-variant": "#474742",
+                      "on-primary-container": "#778c9e",
+                      "error": "#ba1a1a",
+                      "oxford-blue": "#0E2433",
+                      "tertiary": "#0b0c08"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "container-max": "1280px",
+                      "unit": "8px",
+                      "margin-mobile": "16px",
+                      "margin-desktop": "64px",
+                      "gutter": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": ["JetBrains Mono"],
+                      "headline-sm": ["Hanken Grotesk"],
+                      "button": ["Hanken Grotesk"],
+                      "display-lg-mobile": ["Hanken Grotesk"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "body-sm": ["Inter"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "body-md": ["Inter"],
+                      "body-lg": ["Inter"]
+              },
+              "fontSize": {
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "500"}],
+                      "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "button": ["16px", {"lineHeight": "20px", "fontWeight": "600"}],
+                      "display-lg-mobile": ["36px", {"lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .latex-pattern {
+            background-image: radial-gradient(rgba(212, 175, 55, 0.05) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(212, 175, 55, 0.3);
+            color: transparent;
+        }
+        .transition-primary {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-hover-slide:hover::before {
+            transform: scaleX(1);
+        }
+        .btn-hover-slide::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #D4AF37;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+            z-index: -1;
+        }
+    
+        html { scroll-padding-top: 9rem; }
+        [id] { scroll-margin-top: 9rem; }
+            .footer-credit {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            width: fit-content;
+            color: rgba(242, 240, 240, 0.62);
+            font-size: 0.75rem;
+            line-height: 1rem;
+            transition: color 0.2s ease;
+        }
+        .footer-credit:hover {
+            color: #D4AF37;
+        }
+        .footer-credit img {
+            height: 1.25rem;
+            width: auto;
+            object-fit: contain;
+        }    </style>
+</head>
+<body class="bg-parchment-white font-body-md text-oxford-blue selection:bg-academy-gold selection:text-oxford-blue">
+<header class="site-header fixed top-0 left-0 w-full z-[70] bg-parchment-white/95 backdrop-blur-md border-b border-oxford-blue/10" id="main-header">
+<div class="max-w-container-max mx-auto h-28 px-4 md:px-10 xl:px-16 flex items-center justify-center xl:justify-between gap-4 relative">
+<a class="flex items-center justify-center gap-3 min-w-0 xl:min-w-[300px]" href="index.html" aria-label="Koyuncu Academy ana sayfa">
+<img alt="Koyuncu Academy logo" class="h-24 w-auto max-w-[260px] xl:max-w-[280px] object-contain" src="assets/logo-header.png" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');"/>
+<span class="hidden font-headline-sm text-headline-sm font-bold text-oxford-blue whitespace-nowrap">Koyuncu Academy</span>
+</a>
+<nav class="hidden xl:flex items-center gap-6 2xl:gap-8 font-button text-[15px] 2xl:text-button">
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="index.html">Ana Sayfa</a>
+<div class="relative group">
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors inline-flex items-center gap-1 py-7 whitespace-nowrap" href="hizmetler.html">Hizmetler <span class="material-symbols-outlined text-[18px]">expand_more</span></a>
+<div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute left-1/2 top-full w-[360px] -translate-x-1/2 pt-3 transition-all duration-200">
+<div class="rounded-lg border border-oxford-blue/10 bg-parchment-white shadow-xl p-2">
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#universite-ders-destegi"><span class="block font-button">Üniversite Ders Desteği</span><span class="block text-sm text-slate-gray mt-1">Fizik, matematik, mühendislik ve teknik proje desteği.</span></a>
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#sinav-hazirligi"><span class="block font-button">Uluslararası Müfredat &amp; Sınav Hazırlığı</span><span class="block text-sm text-slate-gray mt-1">Abitur, A-Level, SAT, IB ve IGCSE hazırlığı.</span></a>
+<a class="block rounded-md px-4 py-3 hover:bg-white text-oxford-blue" href="hizmetler.html#almanya-danismanligi"><span class="block font-button">Almanya’da Eğitim &amp; Uyum Danışmanlığı</span><span class="block text-sm text-slate-gray mt-1">Akademik yol haritası ve gerçekçi planlama.</span></a>
+</div>
+</div>
+</div>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="ders-modeli.html">Ders Modeli</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="yazilar.html">Yazılar</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="hakkimda.html">Hakkımda</a>
+<a class="text-[#111820] hover:text-[#111820] hover:border-b hover:border-academy-gold transition-colors whitespace-nowrap" href="index.html#contact">İletişim</a>
+</nav>
+<div class="absolute right-4 top-1/2 -translate-y-1/2 xl:static xl:translate-y-0 flex items-center gap-4">
+<div class="hidden xl:flex gap-2 font-label-caps text-label-caps text-slate-gray"><span class="text-oxford-blue border-b border-academy-gold">TR</span><span>EN</span><span>DE</span></div>
+<span class="hidden xl:inline-flex material-symbols-outlined text-oxford-blue">language</span>
+<a class="hidden xl:inline-flex bg-[#111820] text-parchment-white px-5 2xl:px-6 py-2 font-button text-button rounded-sm hover:bg-academy-gold hover:text-[#111820] transition-all duration-300 whitespace-nowrap" href="index.html#contact">İlk görüşme</a>
+<button class="mobile-menu-toggle xl:hidden inline-flex h-11 w-11 items-center justify-center border border-oxford-blue/15 text-oxford-blue rounded-sm" aria-controls="mobile-menu" aria-expanded="false" type="button">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div class="mobile-menu hidden xl:hidden border-t border-oxford-blue/10 bg-parchment-white px-4 pb-5">
+<nav class="mx-auto max-w-container-max flex flex-col gap-1 font-button text-button">
+<a class="py-3 border-b border-oxford-blue/10" href="index.html">Ana Sayfa</a>
+<a class="py-3 border-b border-oxford-blue/10" href="hizmetler.html">Hizmetler</a>
+<a class="py-3 pl-4 text-slate-gray" href="hizmetler.html#universite-ders-destegi">Üniversite Ders Desteği</a>
+<a class="py-3 pl-4 text-slate-gray" href="hizmetler.html#sinav-hazirligi">Sınav Hazırlığı</a>
+<a class="py-3 pl-4 text-slate-gray border-b border-oxford-blue/10" href="hizmetler.html#almanya-danismanligi">Almanya Danışmanlığı</a>
+<a class="py-3 border-b border-oxford-blue/10" href="ders-modeli.html">Ders Modeli</a>
+<a class="py-3 border-b border-oxford-blue/10" href="yazilar.html">Yazılar</a>
+<a class="py-3 border-b border-oxford-blue/10" href="hakkimda.html">Hakkımda</a>
+<a class="mt-3 inline-flex justify-center bg-oxford-blue text-parchment-white px-5 py-3 rounded-sm" href="index.html#contact">İlk görüşme</a>
+</nav>
+</div>
+</header>
+<main class="pt-32">
+<!-- Hero Section -->
+<section class="relative min-h-[70vh] bg-oxford-blue flex items-center overflow-hidden">
+<div class="absolute inset-0 latex-pattern opacity-40"></div>
+<!-- Decorative LaTeX text -->
+<div class="absolute top-1/4 right-0 font-label-caps text-[120px] text-stroke opacity-10 select-none hidden lg:block transform rotate-12">
+                E = mc^2
+            </div>
+<div class="absolute bottom-1/4 left-10 font-label-caps text-[80px] text-stroke opacity-10 select-none hidden lg:block transform -rotate-12">
+                \nabla \times B = \mu_0 J
+            </div>
+<div class="relative px-margin-desktop max-w-container-max mx-auto w-full py-20">
+<div class="max-w-3xl space-y-6">
+<span class="inline-block px-4 py-1 border border-academy-gold/30 text-academy-gold font-label-caps text-label-caps bg-academy-gold/5">
+                        ÜST DÜZEY AKADEMİK HAZIRLIK
+                    </span>
+<h1 class="font-display-lg text-display-lg text-parchment-white leading-tight">
+                        Akademik ciddiyet ve <br/><span class="text-academy-gold">teknik derinlikle özel ders.</span>
+</h1>
+<p class="font-body-lg text-body-lg text-parchment-white/70 max-w-xl">
+                        Koyuncu Academy; net açıklama, matematiksel dikkat ve teknik çalışma akışlarını birleştirerek öğrencinin kendi problem çözme becerisini geliştirmeyi amaçlar.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Our Mission -->
+<section class="py-24 bg-parchment-white relative">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="group p-8 border border-oxford-blue/10 bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container -mr-8 -mt-8 rounded-full opacity-20 group-hover:bg-academy-gold transition-colors duration-300"></div>
+<span class="material-symbols-outlined text-4xl text-academy-gold mb-6 block" data-icon="biotech">biotech</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Hassas Teşhis</h3>
+<p class="font-body-md text-body-md text-slate-gray">Öğrencinin akademik temellerindeki boşlukları, analitik testler ve derinlemesine mülakatlarla tespit ediyoruz.</p>
+</div>
+<div class="group p-8 border border-oxford-blue/10 bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container -mr-8 -mt-8 rounded-full opacity-20 group-hover:bg-academy-gold transition-colors duration-300"></div>
+<span class="material-symbols-outlined text-4xl text-academy-gold mb-6 block" data-icon="architecture">architecture</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Metodik Çözüm</h3>
+<p class="font-body-md text-body-md text-slate-gray">Her öğrenciye özel, bilimsel iş akışlarına dayalı, takip edilebilir ve ölçülebilir bir ilerleme haritası sunuyoruz.</p>
+</div>
+<div class="group p-8 border border-oxford-blue/10 bg-white hover:shadow-lg transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-24 h-24 bg-surface-container -mr-8 -mt-8 rounded-full opacity-20 group-hover:bg-academy-gold transition-colors duration-300"></div>
+<span class="material-symbols-outlined text-4xl text-academy-gold mb-6 block" data-icon="gavel">gavel</span>
+<h3 class="font-headline-sm text-headline-sm mb-4">Akademik Disiplin</h3>
+<p class="font-body-md text-body-md text-slate-gray">Yalnızca sonuç odaklı değil, problem çözme sanatını ve akademik etiği merkeze alan bir çalışma disiplini aşılıyoruz.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Founder Profile -->
+<section class="py-24 bg-surface-container-low overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto">
+<div class="flex flex-col md:flex-row items-center gap-16">
+<div class="w-full md:w-5/12 relative">
+<div class="absolute -top-4 -left-4 w-full h-full border-2 border-academy-gold translate-x-4 translate-y-4"></div>
+<img alt="Batuhan Koyuncu" class="w-full h-auto relative z-10 grayscale hover:grayscale-0 transition-all duration-700" data-alt="A professional portrait of Batuhan Koyuncu, a young male academic founder with a sharp and focused expression." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRHGBMqTvmyKTaaXRtalyRrE8sz73tRPPH7V1qjwob1m04g61toSQR9QVWNsbBeB1sl-342zHIVJggk7PhWBI4z3kSZBNxC8DrqVRf1tamy_3GEdSHr5sJUgC2U5dzkw0ShiXJ6qeQ-ytSqC89mky1bHLkKhGCFSDCaE9DJ1uiypmJGbzZuPjvpbF-KiwVWA-JwjS4liwBG6CbhQH5DiDr7TQx-nW5KTC06tGwPgPoaqs8Bqi9ug5eJVx3QqWpTslmPjuM-k4oPclf"/>
+<div class="absolute bottom-0 right-0 z-20 bg-oxford-blue p-6 translate-x-1/4 -translate-y-1/4 shadow-xl">
+<p class="font-label-caps text-label-caps text-academy-gold uppercase">Founding Academic</p>
+<h4 class="font-headline-sm text-headline-sm text-parchment-white mt-1">Batuhan Koyuncu</h4>
+</div>
+</div>
+<div class="w-full md:w-7/12 space-y-8">
+<div>
+<p class="font-label-caps text-label-caps text-academy-gold mb-2">KURUCU PROFİLİ</p>
+<h2 class="font-headline-md text-headline-md text-oxford-blue mb-6">Mühendislik Hassasiyetiyle <br/>Eğitim Tasarımı</h2>
+<p class="font-body-lg text-body-lg text-slate-gray mb-6 leading-relaxed">
+                                Fizik ve mühendislik dünyasının teknik disiplinini eğitim süreçlerine entegre eden Batuhan Koyuncu, öğrencilerine sadece bilgi değil, bir "workflow" kazandırmayı hedefler. LaTeX ile dokümantasyon, Python ile veri analizi ve MATLAB ile simülasyon yeteneklerini lise düzeyindeki elit STEM öğrencilerine aktararak, onları global üniversite hayatına bir adım önde hazırlar.
+                            </p>
+<div class="grid grid-cols-2 gap-6">
+<div class="border-l-2 border-academy-gold pl-4">
+<h5 class="font-label-caps text-label-caps text-oxford-blue mb-1">UZMANLIK</h5>
+<p class="font-body-sm text-body-sm text-slate-gray">Teorik Fizik &amp; Mühendislik</p>
+</div>
+<div class="border-l-2 border-academy-gold pl-4">
+<h5 class="font-label-caps text-label-caps text-oxford-blue mb-1">TEKNİK ARAÇLAR</h5>
+<p class="font-body-sm text-body-sm text-slate-gray">LaTeX, Python, MATLAB</p>
+</div>
+</div>
+</div>
+<div class="flex gap-4 pt-4">
+<a class="group inline-flex items-center gap-2 font-button text-button text-oxford-blue hover:text-academy-gold transition-primary" href="#">
+                                LinkedIn <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" data-icon="north_east">north_east</span>
+</a>
+<div class="w-px h-6 bg-outline-variant"></div>
+<a class="group inline-flex items-center gap-2 font-button text-button text-oxford-blue hover:text-academy-gold transition-primary" href="#">
+                                Yayınlar <span class="material-symbols-outlined text-sm transition-transform group-hover:translate-x-1" data-icon="north_east">north_east</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Approach -->
+<section class="py-24 bg-oxford-blue text-parchment-white relative overflow-hidden">
+<div class="px-margin-desktop max-w-container-max mx-auto relative z-10">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md mb-4">Yaklaşımımız</h2>
+<div class="w-24 h-1 bg-academy-gold mx-auto"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+<div class="space-y-4">
+<div class="text-academy-gold font-label-caps text-xl">01</div>
+<h4 class="font-headline-sm text-headline-sm">Ezber yerine yöntem.</h4>
+</div>
+<div class="space-y-4">
+<div class="text-academy-gold font-label-caps text-xl">02</div>
+<h4 class="font-headline-sm text-headline-sm">Kavram, tanım ve semboller netleştirilir.</h4>
+</div>
+<div class="space-y-4">
+<div class="text-academy-gold font-label-caps text-xl">03</div>
+<h4 class="font-headline-sm text-headline-sm">Çözüm adımları nedenleriyle birlikte kurulur.</h4>
+</div>
+<div class="space-y-4">
+<div class="text-academy-gold font-label-caps text-xl">04</div>
+<h4 class="font-headline-sm text-headline-sm">Benzer sorulara taşınabilen yöntemler öğretilir.</h4>
+</div>
+<div class="space-y-4">
+<div class="text-academy-gold font-label-caps text-xl">05</div>
+<h4 class="font-headline-sm text-headline-sm">Python, Jupyter ve LaTeX gibi teknik araçlar gerektiğinde kullanılır.</h4>
+</div>
+</div>
+</div>
+<!-- Background element -->
+<div class="absolute -right-20 bottom-0 text-[300px] font-bold opacity-5 text-parchment-white select-none leading-none">
+                STEM
+            </div>
+</section>
+<!-- Call to Action -->
+<section class="py-24 bg-academy-gold">
+<div class="px-margin-desktop max-w-container-max mx-auto text-center space-y-8">
+<h2 class="font-display-lg text-display-lg-mobile md:text-display-lg text-oxford-blue">Geleceğin Mühendisleri <br/>Burada Yetişiyor.</h2>
+<p class="font-body-lg text-body-lg text-oxford-blue/80 max-w-2xl mx-auto">
+                    Koyuncu Academy'nin seçkin akademik dünyasına katılmak ve kişisel yol haritanızı oluşturmak için hemen bir ön görüşme planlayın.
+                </p>
+<div class="pt-8">
+<a class="relative inline-flex items-center px-12 py-5 bg-oxford-blue text-parchment-white font-button text-button overflow-hidden transition-all duration-300 z-10 btn-hover-slide group" href="#">
+                        Danışmanlık Al
+                        <span class="material-symbols-outlined ml-2 transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-4 md:px-16 grid grid-cols-1 md:grid-cols-4 gap-gutter bg-oxford-blue text-parchment-white border-t border-academy-gold/20 relative z-10">
+<div class="flex flex-col gap-4">
+<div class="font-headline-sm text-headline-sm text-academy-gold">Koyuncu Academy</div>
+<p class="font-body-sm text-body-sm text-surface-dim/70">Üniversite ders desteği, uluslararası sınav hazırlığı ve Almanya eğitim danışmanlığı.</p>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">PROGRAMS</h5>
+<nav class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">Hizmetler</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">Almanyada Eğitim</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="hizmetler.html">STEM Özel Ders</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">QUICK LINKS</h5>
+<nav class="flex flex-col gap-2 font-body-sm text-body-sm">
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="ders-modeli.html">Ders Modeli</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="#">Gizlilik</a>
+<a class="text-surface-dim/70 hover:text-parchment-white transition-all hover:translate-x-1" href="#">Impressum</a>
+</nav>
+</div>
+<div class="flex flex-col gap-4">
+<h5 class="font-label-caps text-label-caps text-academy-gold">CONTACT (TR|EN|DE)</h5>
+<p class="font-body-sm text-body-sm text-surface-dim/70 italic">Consultations available in three languages.</p>
+<div class="flex gap-4 mt-2">
+<span class="material-symbols-outlined cursor-pointer hover:text-academy-gold transition-colors" data-icon="mail">mail</span>
+<span class="material-symbols-outlined cursor-pointer hover:text-academy-gold transition-colors" data-icon="phone">phone</span>
+</div>
+</div>
+<div class="md:col-span-4 border-t border-parchment-white/5 pt-8 mt-8 flex flex-col md:flex-row justify-between font-body-sm text-body-sm text-surface-dim/50">
+<p class="">© 2026 Koyuncu Academy. Akademik destek ve eğitim danışmanlığı.</p>
+<a class="footer-credit" href="https://www.machmal38.de" target="_blank" rel="noopener">
+        <img src="assets/machmal-logo.png" alt="Machmal Internetdienste Webdesign" onerror="this.remove()">
+        <span>Webdesign &amp; Entwicklung: Machmal Internetdienste</span>
+      </a>
+</div>
+</footer>
+<script>
+        // Micro-interactions and scroll effects
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('opacity-100', 'translate-y-0');
+                        entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    }
+                });
+            }, observerOptions);
+
+            // Animate cards on scroll
+            document.querySelectorAll('.group, .space-y-4').forEach(el => {
+                el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+                observer.observe(el);
+            });
+        });
+    </script>
+<script>
+(function () {
+  const toggle = document.querySelector('.mobile-menu-toggle');
+  const menu = document.querySelector('.mobile-menu');
+  if (!toggle || !menu) return;
+  toggle.addEventListener('click', () => {
+    const isOpen = !menu.classList.contains('hidden');
+    menu.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+    const icon = toggle.querySelector('.material-symbols-outlined');
+    if (icon) icon.textContent = isOpen ? 'menu' : 'close';
+  });
+  menu.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      toggle.setAttribute('aria-expanded', 'false');
+      const icon = toggle.querySelector('.material-symbols-outlined');
+      if (icon) icon.textContent = 'menu';
+    });
+  });
+})();
+</script></body></html>
+
+
+
+
+
+
+
+
